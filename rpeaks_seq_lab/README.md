@@ -8,3 +8,6 @@ For usage of original trained models, refer to [this function](https://github.co
 
 ## Experiments
 
+test qrs score             |  train qrs score          | train epoch loss
+:-------------------------:|:-------------------------:|:-------------------------:
+![test_qrs_score](results/test_qrs_score.png)  |  ![train_qrs_score](results/train_qrs_score.png) | ![train_epoch_loss](results/train_loss.png)
