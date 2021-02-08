@@ -1,0 +1,3541 @@
+2021-02-07 18:02:54,470 - ECG-SEQ-LAB - INFO - 
+********************   Start Training   ********************
+
+2021-02-07 18:02:54,471 - ECG-SEQ-LAB - INFO - Using device cuda
+2021-02-07 18:02:54,472 - ECG-SEQ-LAB - INFO - Using torch of version 1.3.1
+2021-02-07 18:02:54,494 - ECG-SEQ-LAB - INFO - with configuration
+{
+    "fs": 500
+    "db_dir": "/media/cfs/wenhao71/data/CPSC2019/train/"
+    "log_dir": "/media/cfs/wenhao71/workspace/torch_ecg/torch_ecg/train/train_seq_lab_net_cpsc2019/log"
+    "checkpoints": "/media/cfs/wenhao71/workspace/torch_ecg/torch_ecg/train/train_seq_lab_net_cpsc2019/checkpoints"
+    "keep_checkpoint_max": 50
+    "train_ratio": 0.8
+    "input_len": 5000
+    "classes": [
+        "N"
+    ]
+    "n_leads": 1
+    "bias_thr": 37.5
+    "skip_dist": 250.0
+    "label_smoothing": 0.0
+    "random_normalize": True
+    "random_normalize_mean": [
+        -0.05, 0.1
+    ]
+    "random_normalize_std": [
+        0.08, 0.32
+    ]
+    "baseline_wander": True
+    "bw": True
+    "bw_fs": [0.33 0.1  0.05 0.01]
+    "bw_ampl_ratio": [[0.01 0.01 0.02 0.03]
+ [0.01 0.02 0.04 0.05]
+ [0.1  0.06 0.04 0.02]
+ [0.02 0.04 0.07 0.1 ]
+ [0.05 0.1  0.16 0.25]
+ [0.1  0.15 0.25 0.3 ]
+ [0.25 0.25 0.3  0.35]]
+    "bw_gaussian": [[0.    0.   ]
+ [0.    0.   ]
+ [0.    0.   ]
+ [0.    0.003]
+ [0.    0.01 ]]
+    "flip": [
+        -1, 1, 1, 1, 1
+    ]
+    "seq_lab_reduction": 8
+    "n_epochs": 300
+    "batch_size": 256
+    "train_optimizer": "adam"
+    "learning_rate": 0.0001
+    "lr": 0.0001
+    "lr_step_size": 50
+    "lr_gamma": 0.1
+    "lr_scheduler": None
+    "momentum": 0.949
+    "decay": 0.0005
+    "loss": "BCEWithLogitsLoss"
+    "eval_every": 20
+    "model_name": "cnn"
+    "cnn_name": "multi_scopic"
+    "rnn_name": "none"
+    "attn_name": "se"
+}
+2021-02-07 18:02:55,534 - ECG-SEQ-LAB - INFO - training configurations are as follows:
+{
+    "fs": 500
+    "db_dir": "/media/cfs/wenhao71/data/CPSC2019/train/"
+    "log_dir": "/media/cfs/wenhao71/workspace/torch_ecg/torch_ecg/train/train_seq_lab_net_cpsc2019/log"
+    "checkpoints": "/media/cfs/wenhao71/workspace/torch_ecg/torch_ecg/train/train_seq_lab_net_cpsc2019/checkpoints"
+    "keep_checkpoint_max": 50
+    "train_ratio": 0.8
+    "input_len": 5000
+    "classes": [
+        "N"
+    ]
+    "n_leads": 1
+    "bias_thr": 37.5
+    "skip_dist": 250.0
+    "label_smoothing": 0.0
+    "random_normalize": True
+    "random_normalize_mean": [
+        -0.05, 0.1
+    ]
+    "random_normalize_std": [
+        0.08, 0.32
+    ]
+    "baseline_wander": True
+    "bw": True
+    "bw_fs": [0.33 0.1  0.05 0.01]
+    "bw_ampl_ratio": [[0.01 0.01 0.02 0.03]
+ [0.01 0.02 0.04 0.05]
+ [0.1  0.06 0.04 0.02]
+ [0.02 0.04 0.07 0.1 ]
+ [0.05 0.1  0.16 0.25]
+ [0.1  0.15 0.25 0.3 ]
+ [0.25 0.25 0.3  0.35]]
+    "bw_gaussian": [[0.    0.   ]
+ [0.    0.   ]
+ [0.    0.   ]
+ [0.    0.003]
+ [0.    0.01 ]]
+    "flip": [
+        -1, 1, 1, 1, 1
+    ]
+    "seq_lab_reduction": 8
+    "n_epochs": 300
+    "batch_size": 256
+    "train_optimizer": "adam"
+    "learning_rate": 0.0001
+    "lr": 0.0001
+    "lr_step_size": 50
+    "lr_gamma": 0.1
+    "lr_scheduler": None
+    "momentum": 0.949
+    "decay": 0.0005
+    "loss": "BCEWithLogitsLoss"
+    "eval_every": 20
+    "model_name": "cnn"
+    "cnn_name": "multi_scopic"
+    "rnn_name": "none"
+    "attn_name": "se"
+    "debug": True
+}
+2021-02-07 18:02:55,821 - ECG-SEQ-LAB - INFO - 
+Starting training:
+------------------
+Epochs:          300
+Batch size:      256
+Learning rate:   0.0001
+Training size:   1600
+Validation size: 400
+Device:          cuda
+Optimizer:       adam
+-----------------------------------------
+
+2021-02-07 18:04:34,856 - ECG-SEQ-LAB - INFO - 
+                Train epoch_1:
+                --------------------
+                train/epoch_loss:        4.825974702835083
+train/qrs_score:         0.0579
+
+                test/qrs_score:          0.068
+                ---------------------------------
+
+2021-02-07 18:04:34,903 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:04:34,985 - ECG-SEQ-LAB - INFO - Checkpoint 1 saved!
+2021-02-07 18:09:09,922 - ECG-SEQ-LAB - INFO - 
+                Train epoch_2:
+                --------------------
+                train/epoch_loss:        3.401021659374237
+train/qrs_score:         0.1363
+
+                test/qrs_score:          0.1302
+                ---------------------------------
+
+2021-02-07 18:09:10,138 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:09:10,887 - ECG-SEQ-LAB - INFO - Checkpoint 2 saved!
+2021-02-07 18:11:09,496 - ECG-SEQ-LAB - INFO - Train step_20: loss : 0.37691551446914673
+2021-02-07 18:11:51,895 - ECG-SEQ-LAB - INFO - 
+                Train epoch_3:
+                --------------------
+                train/epoch_loss:        2.8007340729236603
+train/qrs_score:         0.2137
+
+                test/qrs_score:          0.1955
+                ---------------------------------
+
+2021-02-07 18:11:52,088 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:11:52,793 - ECG-SEQ-LAB - INFO - Checkpoint 3 saved!
+2021-02-07 18:13:05,033 - ECG-SEQ-LAB - INFO - 
+                Train epoch_4:
+                --------------------
+                train/epoch_loss:        2.4607959985733032
+train/qrs_score:         0.3378
+
+                test/qrs_score:          0.323
+                ---------------------------------
+
+2021-02-07 18:13:05,042 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:13:05,130 - ECG-SEQ-LAB - INFO - Checkpoint 4 saved!
+2021-02-07 18:15:19,039 - ECG-SEQ-LAB - INFO - 
+                Train epoch_5:
+                --------------------
+                train/epoch_loss:        2.229233741760254
+train/qrs_score:         0.4614
+
+                test/qrs_score:          0.4422
+                ---------------------------------
+
+2021-02-07 18:15:19,093 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:15:19,779 - ECG-SEQ-LAB - INFO - Checkpoint 5 saved!
+2021-02-07 18:15:59,797 - ECG-SEQ-LAB - INFO - Train step_40: loss : 0.27789804339408875
+2021-02-07 18:16:27,009 - ECG-SEQ-LAB - INFO - 
+                Train epoch_6:
+                --------------------
+                train/epoch_loss:        2.041722148656845
+train/qrs_score:         0.5474
+
+                test/qrs_score:          0.542
+                ---------------------------------
+
+2021-02-07 18:16:27,081 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:16:27,494 - ECG-SEQ-LAB - INFO - Checkpoint 6 saved!
+2021-02-07 18:17:19,209 - ECG-SEQ-LAB - INFO - 
+                Train epoch_7:
+                --------------------
+                train/epoch_loss:        1.8662977367639542
+train/qrs_score:         0.6169
+
+                test/qrs_score:          0.6195
+                ---------------------------------
+
+2021-02-07 18:17:19,360 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:17:19,693 - ECG-SEQ-LAB - INFO - Checkpoint 7 saved!
+2021-02-07 18:18:40,712 - ECG-SEQ-LAB - INFO - 
+                Train epoch_8:
+                --------------------
+                train/epoch_loss:        1.7491995990276337
+train/qrs_score:         0.6442
+
+                test/qrs_score:          0.6342
+                ---------------------------------
+
+2021-02-07 18:18:40,790 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:18:42,468 - ECG-SEQ-LAB - INFO - Checkpoint 8 saved!
+2021-02-07 18:19:27,741 - ECG-SEQ-LAB - INFO - Train step_60: loss : 0.22496283054351807
+2021-02-07 18:20:18,423 - ECG-SEQ-LAB - INFO - 
+                Train epoch_9:
+                --------------------
+                train/epoch_loss:        1.6137356460094452
+train/qrs_score:         0.6671
+
+                test/qrs_score:          0.6668
+                ---------------------------------
+
+2021-02-07 18:20:18,583 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:20:18,919 - ECG-SEQ-LAB - INFO - Checkpoint 9 saved!
+2021-02-07 18:22:23,122 - ECG-SEQ-LAB - INFO - 
+                Train epoch_10:
+                --------------------
+                train/epoch_loss:        1.4857980608940125
+train/qrs_score:         0.6922
+
+                test/qrs_score:          0.7038
+                ---------------------------------
+
+2021-02-07 18:22:23,545 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:22:27,561 - ECG-SEQ-LAB - INFO - Checkpoint 10 saved!
+2021-02-07 18:24:44,631 - ECG-SEQ-LAB - INFO - 
+                Train epoch_11:
+                --------------------
+                train/epoch_loss:        1.3985759168863297
+train/qrs_score:         0.6987
+
+                test/qrs_score:          0.71
+                ---------------------------------
+
+2021-02-07 18:24:44,647 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:24:44,803 - ECG-SEQ-LAB - INFO - Checkpoint 11 saved!
+2021-02-07 18:25:07,004 - ECG-SEQ-LAB - INFO - Train step_80: loss : 0.20072026550769806
+2021-02-07 18:25:44,736 - ECG-SEQ-LAB - INFO - 
+                Train epoch_12:
+                --------------------
+                train/epoch_loss:        1.2931409925222397
+train/qrs_score:         0.7136
+
+                test/qrs_score:          0.7215
+                ---------------------------------
+
+2021-02-07 18:25:44,775 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:25:45,167 - ECG-SEQ-LAB - INFO - Checkpoint 12 saved!
+2021-02-07 18:26:44,801 - ECG-SEQ-LAB - INFO - 
+                Train epoch_13:
+                --------------------
+                train/epoch_loss:        1.227172076702118
+train/qrs_score:         0.7141
+
+                test/qrs_score:          0.735
+                ---------------------------------
+
+2021-02-07 18:26:44,914 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:26:45,462 - ECG-SEQ-LAB - INFO - Checkpoint 13 saved!
+2021-02-07 18:27:38,130 - ECG-SEQ-LAB - INFO - 
+                Train epoch_14:
+                --------------------
+                train/epoch_loss:        1.171672761440277
+train/qrs_score:         0.7261
+
+                test/qrs_score:          0.744
+                ---------------------------------
+
+2021-02-07 18:27:38,136 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:27:38,340 - ECG-SEQ-LAB - INFO - Checkpoint 14 saved!
+2021-02-07 18:27:57,296 - ECG-SEQ-LAB - INFO - Train step_100: loss : 0.14959144592285156
+2021-02-07 18:28:37,807 - ECG-SEQ-LAB - INFO - 
+                Train epoch_15:
+                --------------------
+                train/epoch_loss:        1.1245850771665573
+train/qrs_score:         0.7288
+
+                test/qrs_score:          0.7465
+                ---------------------------------
+
+2021-02-07 18:28:37,886 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:28:38,293 - ECG-SEQ-LAB - INFO - Checkpoint 15 saved!
+2021-02-07 18:30:14,497 - ECG-SEQ-LAB - INFO - 
+                Train epoch_16:
+                --------------------
+                train/epoch_loss:        1.0689321756362915
+train/qrs_score:         0.7366
+
+                test/qrs_score:          0.754
+                ---------------------------------
+
+2021-02-07 18:30:14,503 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:30:14,768 - ECG-SEQ-LAB - INFO - Checkpoint 16 saved!
+2021-02-07 18:31:25,095 - ECG-SEQ-LAB - INFO - 
+                Train epoch_17:
+                --------------------
+                train/epoch_loss:        1.0256812870502472
+train/qrs_score:         0.7428
+
+                test/qrs_score:          0.763
+                ---------------------------------
+
+2021-02-07 18:31:25,112 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:31:25,385 - ECG-SEQ-LAB - INFO - Checkpoint 17 saved!
+2021-02-07 18:31:39,999 - ECG-SEQ-LAB - INFO - Train step_120: loss : 0.13872820138931274
+2021-02-07 18:32:23,421 - ECG-SEQ-LAB - INFO - 
+                Train epoch_18:
+                --------------------
+                train/epoch_loss:        1.0413322299718857
+train/qrs_score:         0.7396
+
+                test/qrs_score:          0.7528
+                ---------------------------------
+
+2021-02-07 18:32:23,432 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:32:23,632 - ECG-SEQ-LAB - INFO - Checkpoint 18 saved!
+2021-02-07 18:33:43,859 - ECG-SEQ-LAB - INFO - 
+                Train epoch_19:
+                --------------------
+                train/epoch_loss:        0.9862435460090637
+train/qrs_score:         0.7532
+
+                test/qrs_score:          0.7765
+                ---------------------------------
+
+2021-02-07 18:33:43,990 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:33:44,958 - ECG-SEQ-LAB - INFO - Checkpoint 19 saved!
+2021-02-07 18:34:20,318 - ECG-SEQ-LAB - INFO - Train step_140: loss : 0.13847675919532776
+2021-02-07 18:34:48,902 - ECG-SEQ-LAB - INFO - 
+                Train epoch_20:
+                --------------------
+                train/epoch_loss:        0.9818290919065475
+train/qrs_score:         0.7562
+
+                test/qrs_score:          0.7648
+                ---------------------------------
+
+2021-02-07 18:34:48,942 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:34:49,155 - ECG-SEQ-LAB - INFO - Checkpoint 20 saved!
+2021-02-07 18:35:37,914 - ECG-SEQ-LAB - INFO - 
+                Train epoch_21:
+                --------------------
+                train/epoch_loss:        0.950716994702816
+train/qrs_score:         0.7608
+
+                test/qrs_score:          0.7762
+                ---------------------------------
+
+2021-02-07 18:35:37,924 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:35:38,195 - ECG-SEQ-LAB - INFO - Checkpoint 21 saved!
+2021-02-07 18:37:22,913 - ECG-SEQ-LAB - INFO - 
+                Train epoch_22:
+                --------------------
+                train/epoch_loss:        0.9607900753617287
+train/qrs_score:         0.7616
+
+                test/qrs_score:          0.7847
+                ---------------------------------
+
+2021-02-07 18:37:23,004 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:37:23,316 - ECG-SEQ-LAB - INFO - Checkpoint 22 saved!
+2021-02-07 18:38:28,796 - ECG-SEQ-LAB - INFO - Train step_160: loss : 0.1291544884443283
+2021-02-07 18:38:52,252 - ECG-SEQ-LAB - INFO - 
+                Train epoch_23:
+                --------------------
+                train/epoch_loss:        0.9197910204529762
+train/qrs_score:         0.7613
+
+                test/qrs_score:          0.7832
+                ---------------------------------
+
+2021-02-07 18:38:52,324 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:38:52,912 - ECG-SEQ-LAB - INFO - Checkpoint 23 saved!
+2021-02-07 18:39:43,041 - ECG-SEQ-LAB - INFO - 
+                Train epoch_24:
+                --------------------
+                train/epoch_loss:        0.9169820845127106
+train/qrs_score:         0.7651
+
+                test/qrs_score:          0.789
+                ---------------------------------
+
+2021-02-07 18:39:43,064 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:39:43,624 - ECG-SEQ-LAB - INFO - Checkpoint 24 saved!
+2021-02-07 18:40:43,945 - ECG-SEQ-LAB - INFO - 
+                Train epoch_25:
+                --------------------
+                train/epoch_loss:        0.8853127285838127
+train/qrs_score:         0.7701
+
+                test/qrs_score:          0.784
+                ---------------------------------
+
+2021-02-07 18:40:44,007 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:40:44,581 - ECG-SEQ-LAB - INFO - Checkpoint 25 saved!
+2021-02-07 18:41:13,460 - ECG-SEQ-LAB - INFO - Train step_180: loss : 0.12550771236419678
+2021-02-07 18:41:32,597 - ECG-SEQ-LAB - INFO - 
+                Train epoch_26:
+                --------------------
+                train/epoch_loss:        0.8771118372678757
+train/qrs_score:         0.772
+
+                test/qrs_score:          0.7995
+                ---------------------------------
+
+2021-02-07 18:41:32,601 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:41:32,947 - ECG-SEQ-LAB - INFO - Checkpoint 26 saved!
+2021-02-07 18:42:35,493 - ECG-SEQ-LAB - INFO - 
+                Train epoch_27:
+                --------------------
+                train/epoch_loss:        0.8808007165789604
+train/qrs_score:         0.7693
+
+                test/qrs_score:          0.7995
+                ---------------------------------
+
+2021-02-07 18:42:35,563 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:42:35,812 - ECG-SEQ-LAB - INFO - Checkpoint 27 saved!
+2021-02-07 18:43:27,703 - ECG-SEQ-LAB - INFO - 
+                Train epoch_28:
+                --------------------
+                train/epoch_loss:        0.8469280749559402
+train/qrs_score:         0.7744
+
+                test/qrs_score:          0.8058
+                ---------------------------------
+
+2021-02-07 18:43:27,721 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:43:27,907 - ECG-SEQ-LAB - INFO - Checkpoint 28 saved!
+2021-02-07 18:43:52,351 - ECG-SEQ-LAB - INFO - Train step_200: loss : 0.1264290064573288
+2021-02-07 18:44:29,425 - ECG-SEQ-LAB - INFO - 
+                Train epoch_29:
+                --------------------
+                train/epoch_loss:        0.8523363843560219
+train/qrs_score:         0.7754
+
+                test/qrs_score:          0.81
+                ---------------------------------
+
+2021-02-07 18:44:29,550 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:44:29,999 - ECG-SEQ-LAB - INFO - Checkpoint 29 saved!
+2021-02-07 18:45:46,105 - ECG-SEQ-LAB - INFO - 
+                Train epoch_30:
+                --------------------
+                train/epoch_loss:        0.8439180180430412
+train/qrs_score:         0.7696
+
+                test/qrs_score:          0.8085
+                ---------------------------------
+
+2021-02-07 18:45:46,217 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:45:46,488 - ECG-SEQ-LAB - INFO - Checkpoint 30 saved!
+2021-02-07 18:46:47,740 - ECG-SEQ-LAB - INFO - 
+                Train epoch_31:
+                --------------------
+                train/epoch_loss:        0.8253984153270721
+train/qrs_score:         0.7786
+
+                test/qrs_score:          0.8072
+                ---------------------------------
+
+2021-02-07 18:46:47,815 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:46:48,119 - ECG-SEQ-LAB - INFO - Checkpoint 31 saved!
+2021-02-07 18:47:08,896 - ECG-SEQ-LAB - INFO - Train step_220: loss : 0.11992297321557999
+2021-02-07 18:47:42,336 - ECG-SEQ-LAB - INFO - 
+                Train epoch_32:
+                --------------------
+                train/epoch_loss:        0.8176609128713608
+train/qrs_score:         0.7831
+
+                test/qrs_score:          0.8038
+                ---------------------------------
+
+2021-02-07 18:47:42,408 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:47:43,088 - ECG-SEQ-LAB - INFO - Checkpoint 32 saved!
+2021-02-07 18:49:07,610 - ECG-SEQ-LAB - INFO - 
+                Train epoch_33:
+                --------------------
+                train/epoch_loss:        0.8113287314772606
+train/qrs_score:         0.7793
+
+                test/qrs_score:          0.8165
+                ---------------------------------
+
+2021-02-07 18:49:07,634 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:49:07,791 - ECG-SEQ-LAB - INFO - Checkpoint 33 saved!
+2021-02-07 18:49:55,631 - ECG-SEQ-LAB - INFO - 
+                Train epoch_34:
+                --------------------
+                train/epoch_loss:        0.8173119947314262
+train/qrs_score:         0.7822
+
+                test/qrs_score:          0.8182
+                ---------------------------------
+
+2021-02-07 18:49:55,637 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:49:55,794 - ECG-SEQ-LAB - INFO - Checkpoint 34 saved!
+2021-02-07 18:50:13,697 - ECG-SEQ-LAB - INFO - Train step_240: loss : 0.1167958453297615
+2021-02-07 18:50:49,298 - ECG-SEQ-LAB - INFO - 
+                Train epoch_35:
+                --------------------
+                train/epoch_loss:        0.7938997969031334
+train/qrs_score:         0.7826
+
+                test/qrs_score:          0.8218
+                ---------------------------------
+
+2021-02-07 18:50:49,380 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:50:49,709 - ECG-SEQ-LAB - INFO - Checkpoint 35 saved!
+2021-02-07 18:53:04,709 - ECG-SEQ-LAB - INFO - 
+                Train epoch_36:
+                --------------------
+                train/epoch_loss:        0.8150601089000702
+train/qrs_score:         0.7808
+
+                test/qrs_score:          0.82
+                ---------------------------------
+
+2021-02-07 18:53:05,376 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:53:06,464 - ECG-SEQ-LAB - INFO - Checkpoint 36 saved!
+2021-02-07 18:54:58,320 - ECG-SEQ-LAB - INFO - 
+                Train epoch_37:
+                --------------------
+                train/epoch_loss:        0.7815458923578262
+train/qrs_score:         0.7856
+
+                test/qrs_score:          0.8078
+                ---------------------------------
+
+2021-02-07 18:54:58,413 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:54:59,080 - ECG-SEQ-LAB - INFO - Checkpoint 37 saved!
+2021-02-07 18:55:28,251 - ECG-SEQ-LAB - INFO - Train step_260: loss : 0.1100563332438469
+2021-02-07 18:56:14,195 - ECG-SEQ-LAB - INFO - 
+                Train epoch_38:
+                --------------------
+                train/epoch_loss:        0.7789368852972984
+train/qrs_score:         0.7841
+
+                test/qrs_score:          0.82
+                ---------------------------------
+
+2021-02-07 18:56:14,355 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:56:14,706 - ECG-SEQ-LAB - INFO - Checkpoint 38 saved!
+2021-02-07 18:57:41,305 - ECG-SEQ-LAB - INFO - 
+                Train epoch_39:
+                --------------------
+                train/epoch_loss:        0.7661718428134918
+train/qrs_score:         0.7829
+
+                test/qrs_score:          0.8157
+                ---------------------------------
+
+2021-02-07 18:57:41,499 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 18:57:42,120 - ECG-SEQ-LAB - INFO - Checkpoint 39 saved!
+2021-02-07 18:59:46,829 - ECG-SEQ-LAB - INFO - Train step_280: loss : 0.1346406489610672
+2021-02-07 19:00:52,194 - ECG-SEQ-LAB - INFO - 
+                Train epoch_40:
+                --------------------
+                train/epoch_loss:        0.7905087992548943
+train/qrs_score:         0.7866
+
+                test/qrs_score:          0.82
+                ---------------------------------
+
+2021-02-07 19:00:52,250 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:00:52,767 - ECG-SEQ-LAB - INFO - Checkpoint 40 saved!
+2021-02-07 19:02:16,940 - ECG-SEQ-LAB - INFO - 
+                Train epoch_41:
+                --------------------
+                train/epoch_loss:        0.775838315486908
+train/qrs_score:         0.7871
+
+                test/qrs_score:          0.8215
+                ---------------------------------
+
+2021-02-07 19:02:17,037 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:02:17,314 - ECG-SEQ-LAB - INFO - Checkpoint 41 saved!
+2021-02-07 19:03:37,214 - ECG-SEQ-LAB - INFO - 
+                Train epoch_42:
+                --------------------
+                train/epoch_loss:        0.7817844152450562
+train/qrs_score:         0.7824
+
+                test/qrs_score:          0.818
+                ---------------------------------
+
+2021-02-07 19:03:37,982 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:03:38,220 - ECG-SEQ-LAB - INFO - Checkpoint 42 saved!
+2021-02-07 19:04:24,496 - ECG-SEQ-LAB - INFO - Train step_300: loss : 0.11494943499565125
+2021-02-07 19:05:45,430 - ECG-SEQ-LAB - INFO - 
+                Train epoch_43:
+                --------------------
+                train/epoch_loss:        0.7492769211530685
+train/qrs_score:         0.7905
+
+                test/qrs_score:          0.823
+                ---------------------------------
+
+2021-02-07 19:05:45,503 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:05:46,123 - ECG-SEQ-LAB - INFO - Checkpoint 43 saved!
+2021-02-07 19:07:17,503 - ECG-SEQ-LAB - INFO - 
+                Train epoch_44:
+                --------------------
+                train/epoch_loss:        0.7489946559071541
+train/qrs_score:         0.7863
+
+                test/qrs_score:          0.8123
+                ---------------------------------
+
+2021-02-07 19:07:17,571 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:07:17,985 - ECG-SEQ-LAB - INFO - Checkpoint 44 saved!
+2021-02-07 19:08:39,441 - ECG-SEQ-LAB - INFO - 
+                Train epoch_45:
+                --------------------
+                train/epoch_loss:        0.7426419332623482
+train/qrs_score:         0.7921
+
+                test/qrs_score:          0.8262
+                ---------------------------------
+
+2021-02-07 19:08:39,469 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:08:39,597 - ECG-SEQ-LAB - INFO - Checkpoint 45 saved!
+2021-02-07 19:09:23,409 - ECG-SEQ-LAB - INFO - Train step_320: loss : 0.10151118040084839
+2021-02-07 19:09:54,254 - ECG-SEQ-LAB - INFO - 
+                Train epoch_46:
+                --------------------
+                train/epoch_loss:        0.7297121807932854
+train/qrs_score:         0.7923
+
+                test/qrs_score:          0.8178
+                ---------------------------------
+
+2021-02-07 19:09:54,448 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:09:54,819 - ECG-SEQ-LAB - INFO - Checkpoint 46 saved!
+2021-02-07 19:10:52,049 - ECG-SEQ-LAB - INFO - 
+                Train epoch_47:
+                --------------------
+                train/epoch_loss:        0.7370360866189003
+train/qrs_score:         0.7922
+
+                test/qrs_score:          0.8212
+                ---------------------------------
+
+2021-02-07 19:10:52,058 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:10:52,302 - ECG-SEQ-LAB - INFO - Checkpoint 47 saved!
+2021-02-07 19:11:47,303 - ECG-SEQ-LAB - INFO - 
+                Train epoch_48:
+                --------------------
+                train/epoch_loss:        0.7265506461262703
+train/qrs_score:         0.7952
+
+                test/qrs_score:          0.8208
+                ---------------------------------
+
+2021-02-07 19:11:47,316 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:11:47,433 - ECG-SEQ-LAB - INFO - Checkpoint 48 saved!
+2021-02-07 19:12:09,843 - ECG-SEQ-LAB - INFO - Train step_340: loss : 0.09552001953125
+2021-02-07 19:12:30,251 - ECG-SEQ-LAB - INFO - 
+                Train epoch_49:
+                --------------------
+                train/epoch_loss:        0.7398462444543839
+train/qrs_score:         0.7944
+
+                test/qrs_score:          0.818
+                ---------------------------------
+
+2021-02-07 19:12:30,255 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:12:30,342 - ECG-SEQ-LAB - INFO - Checkpoint 49 saved!
+2021-02-07 19:13:13,819 - ECG-SEQ-LAB - INFO - 
+                Train epoch_50:
+                --------------------
+                train/epoch_loss:        0.7265028208494186
+train/qrs_score:         0.7961
+
+                test/qrs_score:          0.818
+                ---------------------------------
+
+2021-02-07 19:13:13,827 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:13:13,908 - ECG-SEQ-LAB - INFO - Checkpoint 50 saved!
+2021-02-07 19:13:56,737 - ECG-SEQ-LAB - INFO - 
+                Train epoch_51:
+                --------------------
+                train/epoch_loss:        0.73604616522789
+train/qrs_score:         0.7963
+
+                test/qrs_score:          0.8265
+                ---------------------------------
+
+2021-02-07 19:13:56,750 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:13:56,846 - ECG-SEQ-LAB - INFO - Checkpoint 51 saved!
+2021-02-07 19:14:15,022 - ECG-SEQ-LAB - INFO - Train step_360: loss : 0.09877718240022659
+2021-02-07 19:14:42,094 - ECG-SEQ-LAB - INFO - 
+                Train epoch_52:
+                --------------------
+                train/epoch_loss:        0.7264169827103615
+train/qrs_score:         0.7957
+
+                test/qrs_score:          0.8175
+                ---------------------------------
+
+2021-02-07 19:14:42,102 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:14:42,159 - ECG-SEQ-LAB - INFO - Checkpoint 52 saved!
+2021-02-07 19:15:29,305 - ECG-SEQ-LAB - INFO - 
+                Train epoch_53:
+                --------------------
+                train/epoch_loss:        0.714875653386116
+train/qrs_score:         0.8009
+
+                test/qrs_score:          0.8218
+                ---------------------------------
+
+2021-02-07 19:15:29,310 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:15:29,440 - ECG-SEQ-LAB - INFO - Checkpoint 53 saved!
+2021-02-07 19:16:13,417 - ECG-SEQ-LAB - INFO - 
+                Train epoch_54:
+                --------------------
+                train/epoch_loss:        0.7072724774479866
+train/qrs_score:         0.7946
+
+                test/qrs_score:          0.815
+                ---------------------------------
+
+2021-02-07 19:16:13,426 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:16:13,485 - ECG-SEQ-LAB - INFO - Checkpoint 54 saved!
+2021-02-07 19:16:28,027 - ECG-SEQ-LAB - INFO - Train step_380: loss : 0.10433761030435562
+2021-02-07 19:16:57,324 - ECG-SEQ-LAB - INFO - 
+                Train epoch_55:
+                --------------------
+                train/epoch_loss:        0.7151026725769043
+train/qrs_score:         0.8041
+
+                test/qrs_score:          0.8238
+                ---------------------------------
+
+2021-02-07 19:16:57,336 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:16:57,438 - ECG-SEQ-LAB - INFO - Checkpoint 55 saved!
+2021-02-07 19:17:42,031 - ECG-SEQ-LAB - INFO - 
+                Train epoch_56:
+                --------------------
+                train/epoch_loss:        0.7060495540499687
+train/qrs_score:         0.8
+
+                test/qrs_score:          0.8212
+                ---------------------------------
+
+2021-02-07 19:17:42,048 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:17:42,237 - ECG-SEQ-LAB - INFO - Checkpoint 56 saved!
+2021-02-07 19:18:28,762 - ECG-SEQ-LAB - INFO - 
+                Train epoch_57:
+                --------------------
+                train/epoch_loss:        0.7087418362498283
+train/qrs_score:         0.8037
+
+                test/qrs_score:          0.8208
+                ---------------------------------
+
+2021-02-07 19:18:28,796 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:18:28,880 - ECG-SEQ-LAB - INFO - Checkpoint 57 saved!
+2021-02-07 19:18:39,400 - ECG-SEQ-LAB - INFO - Train step_400: loss : 0.09542395919561386
+2021-02-07 19:19:13,003 - ECG-SEQ-LAB - INFO - 
+                Train epoch_58:
+                --------------------
+                train/epoch_loss:        0.7129635661840439
+train/qrs_score:         0.8016
+
+                test/qrs_score:          0.8248
+                ---------------------------------
+
+2021-02-07 19:19:13,014 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:19:13,091 - ECG-SEQ-LAB - INFO - Checkpoint 58 saved!
+2021-02-07 19:20:10,317 - ECG-SEQ-LAB - INFO - 
+                Train epoch_59:
+                --------------------
+                train/epoch_loss:        0.6785288155078888
+train/qrs_score:         0.8082
+
+                test/qrs_score:          0.8202
+                ---------------------------------
+
+2021-02-07 19:20:10,321 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:20:10,454 - ECG-SEQ-LAB - INFO - Checkpoint 59 saved!
+2021-02-07 19:20:41,946 - ECG-SEQ-LAB - INFO - Train step_420: loss : 0.09175369888544083
+2021-02-07 19:21:03,094 - ECG-SEQ-LAB - INFO - 
+                Train epoch_60:
+                --------------------
+                train/epoch_loss:        0.6983402818441391
+train/qrs_score:         0.8084
+
+                test/qrs_score:          0.8302
+                ---------------------------------
+
+2021-02-07 19:21:03,219 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:21:03,640 - ECG-SEQ-LAB - INFO - Checkpoint 60 saved!
+2021-02-07 19:21:58,099 - ECG-SEQ-LAB - INFO - 
+                Train epoch_61:
+                --------------------
+                train/epoch_loss:        0.6831720918416977
+train/qrs_score:         0.8019
+
+                test/qrs_score:          0.8258
+                ---------------------------------
+
+2021-02-07 19:21:58,104 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:21:58,314 - ECG-SEQ-LAB - INFO - Checkpoint 61 saved!
+2021-02-07 19:22:51,404 - ECG-SEQ-LAB - INFO - 
+                Train epoch_62:
+                --------------------
+                train/epoch_loss:        0.6900969967246056
+train/qrs_score:         0.8049
+
+                test/qrs_score:          0.829
+                ---------------------------------
+
+2021-02-07 19:22:51,414 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:22:51,562 - ECG-SEQ-LAB - INFO - Checkpoint 62 saved!
+2021-02-07 19:23:25,996 - ECG-SEQ-LAB - INFO - Train step_440: loss : 0.09839459508657455
+2021-02-07 19:23:39,095 - ECG-SEQ-LAB - INFO - 
+                Train epoch_63:
+                --------------------
+                train/epoch_loss:        0.678840383887291
+train/qrs_score:         0.8059
+
+                test/qrs_score:          0.8265
+                ---------------------------------
+
+2021-02-07 19:23:39,103 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:23:39,208 - ECG-SEQ-LAB - INFO - Checkpoint 63 saved!
+2021-02-07 19:24:25,910 - ECG-SEQ-LAB - INFO - 
+                Train epoch_64:
+                --------------------
+                train/epoch_loss:        0.6939259171485901
+train/qrs_score:         0.8051
+
+                test/qrs_score:          0.8238
+                ---------------------------------
+
+2021-02-07 19:24:25,938 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:24:26,034 - ECG-SEQ-LAB - INFO - Checkpoint 64 saved!
+2021-02-07 19:25:15,813 - ECG-SEQ-LAB - INFO - 
+                Train epoch_65:
+                --------------------
+                train/epoch_loss:        0.6988555043935776
+train/qrs_score:         0.805
+
+                test/qrs_score:          0.8238
+                ---------------------------------
+
+2021-02-07 19:25:15,817 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:25:15,903 - ECG-SEQ-LAB - INFO - Checkpoint 65 saved!
+2021-02-07 19:25:41,814 - ECG-SEQ-LAB - INFO - Train step_460: loss : 0.10203677415847778
+2021-02-07 19:25:59,252 - ECG-SEQ-LAB - INFO - 
+                Train epoch_66:
+                --------------------
+                train/epoch_loss:        0.6799505054950714
+train/qrs_score:         0.8081
+
+                test/qrs_score:          0.831
+                ---------------------------------
+
+2021-02-07 19:25:59,261 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:25:59,355 - ECG-SEQ-LAB - INFO - Checkpoint 66 saved!
+2021-02-07 19:26:42,758 - ECG-SEQ-LAB - INFO - 
+                Train epoch_67:
+                --------------------
+                train/epoch_loss:        0.6665889248251915
+train/qrs_score:         0.8096
+
+                test/qrs_score:          0.8342
+                ---------------------------------
+
+2021-02-07 19:26:42,798 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:26:42,856 - ECG-SEQ-LAB - INFO - Checkpoint 67 saved!
+2021-02-07 19:27:26,498 - ECG-SEQ-LAB - INFO - 
+                Train epoch_68:
+                --------------------
+                train/epoch_loss:        0.6818595752120018
+train/qrs_score:         0.802
+
+                test/qrs_score:          0.8245
+                ---------------------------------
+
+2021-02-07 19:27:26,511 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:27:26,569 - ECG-SEQ-LAB - INFO - Checkpoint 68 saved!
+2021-02-07 19:27:49,096 - ECG-SEQ-LAB - INFO - Train step_480: loss : 0.08920376002788544
+2021-02-07 19:28:09,853 - ECG-SEQ-LAB - INFO - 
+                Train epoch_69:
+                --------------------
+                train/epoch_loss:        0.6905275285243988
+train/qrs_score:         0.809
+
+                test/qrs_score:          0.8245
+                ---------------------------------
+
+2021-02-07 19:28:09,858 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:28:09,976 - ECG-SEQ-LAB - INFO - Checkpoint 69 saved!
+2021-02-07 19:28:53,850 - ECG-SEQ-LAB - INFO - 
+                Train epoch_70:
+                --------------------
+                train/epoch_loss:        0.6796595454216003
+train/qrs_score:         0.8044
+
+                test/qrs_score:          0.825
+                ---------------------------------
+
+2021-02-07 19:28:53,886 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:28:53,947 - ECG-SEQ-LAB - INFO - Checkpoint 70 saved!
+2021-02-07 19:29:41,204 - ECG-SEQ-LAB - INFO - 
+                Train epoch_71:
+                --------------------
+                train/epoch_loss:        0.6753249019384384
+train/qrs_score:         0.8074
+
+                test/qrs_score:          0.8258
+                ---------------------------------
+
+2021-02-07 19:29:41,244 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:29:41,553 - ECG-SEQ-LAB - INFO - Checkpoint 71 saved!
+2021-02-07 19:30:00,496 - ECG-SEQ-LAB - INFO - Train step_500: loss : 0.09148846566677094
+2021-02-07 19:30:28,055 - ECG-SEQ-LAB - INFO - 
+                Train epoch_72:
+                --------------------
+                train/epoch_loss:        0.6726674661040306
+train/qrs_score:         0.8076
+
+                test/qrs_score:          0.828
+                ---------------------------------
+
+2021-02-07 19:30:28,063 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:30:28,174 - ECG-SEQ-LAB - INFO - Checkpoint 72 saved!
+2021-02-07 19:31:11,755 - ECG-SEQ-LAB - INFO - 
+                Train epoch_73:
+                --------------------
+                train/epoch_loss:        0.6767097786068916
+train/qrs_score:         0.8129
+
+                test/qrs_score:          0.828
+                ---------------------------------
+
+2021-02-07 19:31:11,760 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:31:11,857 - ECG-SEQ-LAB - INFO - Checkpoint 73 saved!
+2021-02-07 19:31:55,412 - ECG-SEQ-LAB - INFO - 
+                Train epoch_74:
+                --------------------
+                train/epoch_loss:        0.6603505983948708
+train/qrs_score:         0.8144
+
+                test/qrs_score:          0.8282
+                ---------------------------------
+
+2021-02-07 19:31:55,427 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:31:55,484 - ECG-SEQ-LAB - INFO - Checkpoint 74 saved!
+2021-02-07 19:32:09,696 - ECG-SEQ-LAB - INFO - Train step_520: loss : 0.09149870276451111
+2021-02-07 19:32:41,795 - ECG-SEQ-LAB - INFO - 
+                Train epoch_75:
+                --------------------
+                train/epoch_loss:        0.6683852225542068
+train/qrs_score:         0.8155
+
+                test/qrs_score:          0.8345
+                ---------------------------------
+
+2021-02-07 19:32:41,839 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:32:42,424 - ECG-SEQ-LAB - INFO - Checkpoint 75 saved!
+2021-02-07 19:34:12,229 - ECG-SEQ-LAB - INFO - 
+                Train epoch_76:
+                --------------------
+                train/epoch_loss:        0.6768205761909485
+train/qrs_score:         0.8185
+
+                test/qrs_score:          0.8338
+                ---------------------------------
+
+2021-02-07 19:34:12,241 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:34:12,315 - ECG-SEQ-LAB - INFO - Checkpoint 76 saved!
+2021-02-07 19:34:55,209 - ECG-SEQ-LAB - INFO - 
+                Train epoch_77:
+                --------------------
+                train/epoch_loss:        0.6549112871289253
+train/qrs_score:         0.8151
+
+                test/qrs_score:          0.8298
+                ---------------------------------
+
+2021-02-07 19:34:55,213 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:34:55,337 - ECG-SEQ-LAB - INFO - Checkpoint 77 saved!
+2021-02-07 19:35:06,911 - ECG-SEQ-LAB - INFO - Train step_540: loss : 0.09617961198091507
+2021-02-07 19:35:40,343 - ECG-SEQ-LAB - INFO - 
+                Train epoch_78:
+                --------------------
+                train/epoch_loss:        0.657316230237484
+train/qrs_score:         0.8175
+
+                test/qrs_score:          0.8298
+                ---------------------------------
+
+2021-02-07 19:35:40,356 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:35:40,443 - ECG-SEQ-LAB - INFO - Checkpoint 78 saved!
+2021-02-07 19:36:27,514 - ECG-SEQ-LAB - INFO - 
+                Train epoch_79:
+                --------------------
+                train/epoch_loss:        0.6666402667760849
+train/qrs_score:         0.8158
+
+                test/qrs_score:          0.829
+                ---------------------------------
+
+2021-02-07 19:36:27,612 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:36:29,027 - ECG-SEQ-LAB - INFO - Checkpoint 79 saved!
+2021-02-07 19:37:17,652 - ECG-SEQ-LAB - INFO - Train step_560: loss : 0.1010122150182724
+2021-02-07 19:37:42,005 - ECG-SEQ-LAB - INFO - 
+                Train epoch_80:
+                --------------------
+                train/epoch_loss:        0.6585181951522827
+train/qrs_score:         0.8179
+
+                test/qrs_score:          0.834
+                ---------------------------------
+
+2021-02-07 19:37:42,020 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:37:42,160 - ECG-SEQ-LAB - INFO - Checkpoint 80 saved!
+2021-02-07 19:38:24,915 - ECG-SEQ-LAB - INFO - 
+                Train epoch_81:
+                --------------------
+                train/epoch_loss:        0.665915459394455
+train/qrs_score:         0.8159
+
+                test/qrs_score:          0.8295
+                ---------------------------------
+
+2021-02-07 19:38:24,920 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:38:24,972 - ECG-SEQ-LAB - INFO - Checkpoint 81 saved!
+2021-02-07 19:39:10,740 - ECG-SEQ-LAB - INFO - 
+                Train epoch_82:
+                --------------------
+                train/epoch_loss:        0.6470279693603516
+train/qrs_score:         0.8217
+
+                test/qrs_score:          0.8343
+                ---------------------------------
+
+2021-02-07 19:39:10,747 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:39:10,860 - ECG-SEQ-LAB - INFO - Checkpoint 82 saved!
+2021-02-07 19:39:49,296 - ECG-SEQ-LAB - INFO - Train step_580: loss : 0.10475032776594162
+2021-02-07 19:40:04,896 - ECG-SEQ-LAB - INFO - 
+                Train epoch_83:
+                --------------------
+                train/epoch_loss:        0.6491376161575317
+train/qrs_score:         0.8192
+
+                test/qrs_score:          0.836
+                ---------------------------------
+
+2021-02-07 19:40:04,903 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:40:05,035 - ECG-SEQ-LAB - INFO - Checkpoint 83 saved!
+2021-02-07 19:40:48,198 - ECG-SEQ-LAB - INFO - 
+                Train epoch_84:
+                --------------------
+                train/epoch_loss:        0.6425978615880013
+train/qrs_score:         0.8163
+
+                test/qrs_score:          0.8345
+                ---------------------------------
+
+2021-02-07 19:40:48,209 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:40:48,348 - ECG-SEQ-LAB - INFO - Checkpoint 84 saved!
+2021-02-07 19:41:31,405 - ECG-SEQ-LAB - INFO - 
+                Train epoch_85:
+                --------------------
+                train/epoch_loss:        0.6519302576780319
+train/qrs_score:         0.8199
+
+                test/qrs_score:          0.8322
+                ---------------------------------
+
+2021-02-07 19:41:31,409 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:41:31,479 - ECG-SEQ-LAB - INFO - Checkpoint 85 saved!
+2021-02-07 19:41:57,621 - ECG-SEQ-LAB - INFO - Train step_600: loss : 0.09832080453634262
+2021-02-07 19:42:15,212 - ECG-SEQ-LAB - INFO - 
+                Train epoch_86:
+                --------------------
+                train/epoch_loss:        0.6442941203713417
+train/qrs_score:         0.8201
+
+                test/qrs_score:          0.833
+                ---------------------------------
+
+2021-02-07 19:42:15,398 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:42:15,483 - ECG-SEQ-LAB - INFO - Checkpoint 86 saved!
+2021-02-07 19:42:58,322 - ECG-SEQ-LAB - INFO - 
+                Train epoch_87:
+                --------------------
+                train/epoch_loss:        0.6406075283885002
+train/qrs_score:         0.8223
+
+                test/qrs_score:          0.8285
+                ---------------------------------
+
+2021-02-07 19:42:58,326 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:42:58,434 - ECG-SEQ-LAB - INFO - Checkpoint 87 saved!
+2021-02-07 19:43:42,098 - ECG-SEQ-LAB - INFO - 
+                Train epoch_88:
+                --------------------
+                train/epoch_loss:        0.6265968307852745
+train/qrs_score:         0.8245
+
+                test/qrs_score:          0.833
+                ---------------------------------
+
+2021-02-07 19:43:42,111 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:43:42,240 - ECG-SEQ-LAB - INFO - Checkpoint 88 saved!
+2021-02-07 19:44:04,640 - ECG-SEQ-LAB - INFO - Train step_620: loss : 0.09022380411624908
+2021-02-07 19:44:27,513 - ECG-SEQ-LAB - INFO - 
+                Train epoch_89:
+                --------------------
+                train/epoch_loss:        0.634257085621357
+train/qrs_score:         0.8276
+
+                test/qrs_score:          0.8388
+                ---------------------------------
+
+2021-02-07 19:44:27,519 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:44:27,776 - ECG-SEQ-LAB - INFO - Checkpoint 89 saved!
+2021-02-07 19:45:14,959 - ECG-SEQ-LAB - INFO - 
+                Train epoch_90:
+                --------------------
+                train/epoch_loss:        0.6499349400401115
+train/qrs_score:         0.8221
+
+                test/qrs_score:          0.8342
+                ---------------------------------
+
+2021-02-07 19:45:15,010 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:45:15,125 - ECG-SEQ-LAB - INFO - Checkpoint 90 saved!
+2021-02-07 19:46:04,431 - ECG-SEQ-LAB - INFO - 
+                Train epoch_91:
+                --------------------
+                train/epoch_loss:        0.6440437287092209
+train/qrs_score:         0.8248
+
+                test/qrs_score:          0.8327
+                ---------------------------------
+
+2021-02-07 19:46:04,455 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:46:04,655 - ECG-SEQ-LAB - INFO - Checkpoint 91 saved!
+2021-02-07 19:46:23,040 - ECG-SEQ-LAB - INFO - Train step_640: loss : 0.09062056988477707
+2021-02-07 19:46:48,724 - ECG-SEQ-LAB - INFO - 
+                Train epoch_92:
+                --------------------
+                train/epoch_loss:        0.6229523196816444
+train/qrs_score:         0.8243
+
+                test/qrs_score:          0.8332
+                ---------------------------------
+
+2021-02-07 19:46:48,734 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:46:48,855 - ECG-SEQ-LAB - INFO - Checkpoint 92 saved!
+2021-02-07 19:47:31,504 - ECG-SEQ-LAB - INFO - 
+                Train epoch_93:
+                --------------------
+                train/epoch_loss:        0.620131105184555
+train/qrs_score:         0.8255
+
+                test/qrs_score:          0.8458
+                ---------------------------------
+
+2021-02-07 19:47:31,511 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:47:31,576 - ECG-SEQ-LAB - INFO - Checkpoint 93 saved!
+2021-02-07 19:48:20,917 - ECG-SEQ-LAB - INFO - 
+                Train epoch_94:
+                --------------------
+                train/epoch_loss:        0.6254584267735481
+train/qrs_score:         0.8278
+
+                test/qrs_score:          0.8428
+                ---------------------------------
+
+2021-02-07 19:48:20,945 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:48:21,116 - ECG-SEQ-LAB - INFO - Checkpoint 94 saved!
+2021-02-07 19:48:37,026 - ECG-SEQ-LAB - INFO - Train step_660: loss : 0.08254024386405945
+2021-02-07 19:49:10,556 - ECG-SEQ-LAB - INFO - 
+                Train epoch_95:
+                --------------------
+                train/epoch_loss:        0.6330973133444786
+train/qrs_score:         0.8255
+
+                test/qrs_score:          0.8393
+                ---------------------------------
+
+2021-02-07 19:49:10,564 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:49:10,677 - ECG-SEQ-LAB - INFO - Checkpoint 95 saved!
+2021-02-07 19:49:55,800 - ECG-SEQ-LAB - INFO - 
+                Train epoch_96:
+                --------------------
+                train/epoch_loss:        0.6137119382619858
+train/qrs_score:         0.8261
+
+                test/qrs_score:          0.846
+                ---------------------------------
+
+2021-02-07 19:49:55,815 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:49:55,887 - ECG-SEQ-LAB - INFO - Checkpoint 96 saved!
+2021-02-07 19:50:39,248 - ECG-SEQ-LAB - INFO - 
+                Train epoch_97:
+                --------------------
+                train/epoch_loss:        0.6153363063931465
+train/qrs_score:         0.8281
+
+                test/qrs_score:          0.844
+                ---------------------------------
+
+2021-02-07 19:50:39,254 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:50:39,415 - ECG-SEQ-LAB - INFO - Checkpoint 97 saved!
+2021-02-07 19:50:49,809 - ECG-SEQ-LAB - INFO - Train step_680: loss : 0.08514922857284546
+2021-02-07 19:51:37,416 - ECG-SEQ-LAB - INFO - 
+                Train epoch_98:
+                --------------------
+                train/epoch_loss:        0.6168317049741745
+train/qrs_score:         0.8289
+
+                test/qrs_score:          0.8428
+                ---------------------------------
+
+2021-02-07 19:51:37,490 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:51:38,599 - ECG-SEQ-LAB - INFO - Checkpoint 98 saved!
+2021-02-07 19:52:46,836 - ECG-SEQ-LAB - INFO - 
+                Train epoch_99:
+                --------------------
+                train/epoch_loss:        0.616614505648613
+train/qrs_score:         0.8274
+
+                test/qrs_score:          0.8435
+                ---------------------------------
+
+2021-02-07 19:52:46,850 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:52:47,013 - ECG-SEQ-LAB - INFO - Checkpoint 99 saved!
+2021-02-07 19:53:18,796 - ECG-SEQ-LAB - INFO - Train step_700: loss : 0.093427874147892
+2021-02-07 19:53:30,541 - ECG-SEQ-LAB - INFO - 
+                Train epoch_100:
+                --------------------
+                train/epoch_loss:        0.6208852604031563
+train/qrs_score:         0.826
+
+                test/qrs_score:          0.846
+                ---------------------------------
+
+2021-02-07 19:53:30,545 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:53:30,704 - ECG-SEQ-LAB - INFO - Checkpoint 100 saved!
+2021-02-07 19:54:15,427 - ECG-SEQ-LAB - INFO - 
+                Train epoch_101:
+                --------------------
+                train/epoch_loss:        0.6128496527671814
+train/qrs_score:         0.8281
+
+                test/qrs_score:          0.8462
+                ---------------------------------
+
+2021-02-07 19:54:15,440 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:54:15,565 - ECG-SEQ-LAB - INFO - Checkpoint 101 saved!
+2021-02-07 19:54:58,107 - ECG-SEQ-LAB - INFO - 
+                Train epoch_102:
+                --------------------
+                train/epoch_loss:        0.6211082562804222
+train/qrs_score:         0.8252
+
+                test/qrs_score:          0.8435
+                ---------------------------------
+
+2021-02-07 19:54:58,111 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:54:58,191 - ECG-SEQ-LAB - INFO - Checkpoint 102 saved!
+2021-02-07 19:55:28,596 - ECG-SEQ-LAB - INFO - Train step_720: loss : 0.08556710183620453
+2021-02-07 19:55:41,914 - ECG-SEQ-LAB - INFO - 
+                Train epoch_103:
+                --------------------
+                train/epoch_loss:        0.6235560923814774
+train/qrs_score:         0.8313
+
+                test/qrs_score:          0.8447
+                ---------------------------------
+
+2021-02-07 19:55:41,924 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:55:41,989 - ECG-SEQ-LAB - INFO - Checkpoint 103 saved!
+2021-02-07 19:56:25,501 - ECG-SEQ-LAB - INFO - 
+                Train epoch_104:
+                --------------------
+                train/epoch_loss:        0.6048005297780037
+train/qrs_score:         0.8301
+
+                test/qrs_score:          0.8368
+                ---------------------------------
+
+2021-02-07 19:56:25,508 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:56:25,595 - ECG-SEQ-LAB - INFO - Checkpoint 104 saved!
+2021-02-07 19:57:09,854 - ECG-SEQ-LAB - INFO - 
+                Train epoch_105:
+                --------------------
+                train/epoch_loss:        0.6001639291644096
+train/qrs_score:         0.8292
+
+                test/qrs_score:          0.8482
+                ---------------------------------
+
+2021-02-07 19:57:09,863 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:57:09,950 - ECG-SEQ-LAB - INFO - Checkpoint 105 saved!
+2021-02-07 19:57:36,196 - ECG-SEQ-LAB - INFO - Train step_740: loss : 0.08647310733795166
+2021-02-07 19:57:52,656 - ECG-SEQ-LAB - INFO - 
+                Train epoch_106:
+                --------------------
+                train/epoch_loss:        0.613027848303318
+train/qrs_score:         0.8282
+
+                test/qrs_score:          0.844
+                ---------------------------------
+
+2021-02-07 19:57:52,661 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:57:52,754 - ECG-SEQ-LAB - INFO - Checkpoint 106 saved!
+2021-02-07 19:58:40,610 - ECG-SEQ-LAB - INFO - 
+                Train epoch_107:
+                --------------------
+                train/epoch_loss:        0.6256757900118828
+train/qrs_score:         0.8287
+
+                test/qrs_score:          0.8425
+                ---------------------------------
+
+2021-02-07 19:58:40,618 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:58:40,675 - ECG-SEQ-LAB - INFO - Checkpoint 107 saved!
+2021-02-07 19:59:24,105 - ECG-SEQ-LAB - INFO - 
+                Train epoch_108:
+                --------------------
+                train/epoch_loss:        0.6207325831055641
+train/qrs_score:         0.8275
+
+                test/qrs_score:          0.8495
+                ---------------------------------
+
+2021-02-07 19:59:24,135 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 19:59:24,430 - ECG-SEQ-LAB - INFO - Checkpoint 108 saved!
+2021-02-07 19:59:46,838 - ECG-SEQ-LAB - INFO - Train step_760: loss : 0.08327721059322357
+2021-02-07 20:00:10,955 - ECG-SEQ-LAB - INFO - 
+                Train epoch_109:
+                --------------------
+                train/epoch_loss:        0.594346359372139
+train/qrs_score:         0.8311
+
+                test/qrs_score:          0.8475
+                ---------------------------------
+
+2021-02-07 20:00:10,982 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:00:11,166 - ECG-SEQ-LAB - INFO - Checkpoint 109 saved!
+2021-02-07 20:00:55,095 - ECG-SEQ-LAB - INFO - 
+                Train epoch_110:
+                --------------------
+                train/epoch_loss:        0.5950799286365509
+train/qrs_score:         0.8328
+
+                test/qrs_score:          0.8447
+                ---------------------------------
+
+2021-02-07 20:00:55,101 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:00:55,183 - ECG-SEQ-LAB - INFO - Checkpoint 110 saved!
+2021-02-07 20:01:39,695 - ECG-SEQ-LAB - INFO - 
+                Train epoch_111:
+                --------------------
+                train/epoch_loss:        0.6170786470174789
+train/qrs_score:         0.8372
+
+                test/qrs_score:          0.8485
+                ---------------------------------
+
+2021-02-07 20:01:39,704 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:01:39,843 - ECG-SEQ-LAB - INFO - Checkpoint 111 saved!
+2021-02-07 20:01:58,105 - ECG-SEQ-LAB - INFO - Train step_780: loss : 0.08008290082216263
+2021-02-07 20:02:22,613 - ECG-SEQ-LAB - INFO - 
+                Train epoch_112:
+                --------------------
+                train/epoch_loss:        0.6056970357894897
+train/qrs_score:         0.8348
+
+                test/qrs_score:          0.8475
+                ---------------------------------
+
+2021-02-07 20:02:22,618 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:02:22,695 - ECG-SEQ-LAB - INFO - Checkpoint 112 saved!
+2021-02-07 20:03:21,830 - ECG-SEQ-LAB - INFO - 
+                Train epoch_113:
+                --------------------
+                train/epoch_loss:        0.6166606023907661
+train/qrs_score:         0.8336
+
+                test/qrs_score:          0.8497
+                ---------------------------------
+
+2021-02-07 20:03:21,881 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:03:22,147 - ECG-SEQ-LAB - INFO - Checkpoint 113 saved!
+2021-02-07 20:04:09,610 - ECG-SEQ-LAB - INFO - 
+                Train epoch_114:
+                --------------------
+                train/epoch_loss:        0.5995210260152817
+train/qrs_score:         0.8336
+
+                test/qrs_score:          0.8522
+                ---------------------------------
+
+2021-02-07 20:04:09,615 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:04:09,670 - ECG-SEQ-LAB - INFO - Checkpoint 114 saved!
+2021-02-07 20:04:24,196 - ECG-SEQ-LAB - INFO - Train step_800: loss : 0.0843079462647438
+2021-02-07 20:05:00,013 - ECG-SEQ-LAB - INFO - 
+                Train epoch_115:
+                --------------------
+                train/epoch_loss:        0.5916768535971642
+train/qrs_score:         0.839
+
+                test/qrs_score:          0.8535
+                ---------------------------------
+
+2021-02-07 20:05:00,026 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:05:00,127 - ECG-SEQ-LAB - INFO - Checkpoint 115 saved!
+2021-02-07 20:05:48,805 - ECG-SEQ-LAB - INFO - 
+                Train epoch_116:
+                --------------------
+                train/epoch_loss:        0.5910529121756554
+train/qrs_score:         0.8335
+
+                test/qrs_score:          0.8538
+                ---------------------------------
+
+2021-02-07 20:05:48,811 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:05:48,944 - ECG-SEQ-LAB - INFO - Checkpoint 116 saved!
+2021-02-07 20:07:03,128 - ECG-SEQ-LAB - INFO - 
+                Train epoch_117:
+                --------------------
+                train/epoch_loss:        0.5825776904821396
+train/qrs_score:         0.8334
+
+                test/qrs_score:          0.8495
+                ---------------------------------
+
+2021-02-07 20:07:03,347 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:07:04,087 - ECG-SEQ-LAB - INFO - Checkpoint 117 saved!
+2021-02-07 20:07:47,699 - ECG-SEQ-LAB - INFO - Train step_820: loss : 0.08125738054513931
+2021-02-07 20:08:21,000 - ECG-SEQ-LAB - INFO - 
+                Train epoch_118:
+                --------------------
+                train/epoch_loss:        0.5838433057069778
+train/qrs_score:         0.839
+
+                test/qrs_score:          0.8502
+                ---------------------------------
+
+2021-02-07 20:08:21,012 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:08:21,136 - ECG-SEQ-LAB - INFO - Checkpoint 118 saved!
+2021-02-07 20:09:08,497 - ECG-SEQ-LAB - INFO - 
+                Train epoch_119:
+                --------------------
+                train/epoch_loss:        0.5827552229166031
+train/qrs_score:         0.838
+
+                test/qrs_score:          0.8505
+                ---------------------------------
+
+2021-02-07 20:09:08,525 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:09:08,721 - ECG-SEQ-LAB - INFO - Checkpoint 119 saved!
+2021-02-07 20:09:48,597 - ECG-SEQ-LAB - INFO - Train step_840: loss : 0.09316382557153702
+2021-02-07 20:10:04,199 - ECG-SEQ-LAB - INFO - 
+                Train epoch_120:
+                --------------------
+                train/epoch_loss:        0.5953081324696541
+train/qrs_score:         0.8359
+
+                test/qrs_score:          0.8478
+                ---------------------------------
+
+2021-02-07 20:10:04,218 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:10:04,381 - ECG-SEQ-LAB - INFO - Checkpoint 120 saved!
+2021-02-07 20:10:47,109 - ECG-SEQ-LAB - INFO - 
+                Train epoch_121:
+                --------------------
+                train/epoch_loss:        0.5814593732357025
+train/qrs_score:         0.8371
+
+                test/qrs_score:          0.849
+                ---------------------------------
+
+2021-02-07 20:10:47,113 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:10:47,200 - ECG-SEQ-LAB - INFO - Checkpoint 121 saved!
+2021-02-07 20:11:31,854 - ECG-SEQ-LAB - INFO - 
+                Train epoch_122:
+                --------------------
+                train/epoch_loss:        0.6013011410832405
+train/qrs_score:         0.8404
+
+                test/qrs_score:          0.8535
+                ---------------------------------
+
+2021-02-07 20:11:31,862 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:11:31,998 - ECG-SEQ-LAB - INFO - Checkpoint 122 saved!
+2021-02-07 20:12:07,096 - ECG-SEQ-LAB - INFO - Train step_860: loss : 0.07943747192621231
+2021-02-07 20:12:19,395 - ECG-SEQ-LAB - INFO - 
+                Train epoch_123:
+                --------------------
+                train/epoch_loss:        0.5868633314967155
+train/qrs_score:         0.8384
+
+                test/qrs_score:          0.8538
+                ---------------------------------
+
+2021-02-07 20:12:19,400 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:12:19,533 - ECG-SEQ-LAB - INFO - Checkpoint 123 saved!
+2021-02-07 20:13:28,549 - ECG-SEQ-LAB - INFO - 
+                Train epoch_124:
+                --------------------
+                train/epoch_loss:        0.5806329920887947
+train/qrs_score:         0.8412
+
+                test/qrs_score:          0.8558
+                ---------------------------------
+
+2021-02-07 20:13:28,559 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:13:28,732 - ECG-SEQ-LAB - INFO - Checkpoint 124 saved!
+2021-02-07 20:14:11,750 - ECG-SEQ-LAB - INFO - 
+                Train epoch_125:
+                --------------------
+                train/epoch_loss:        0.5835236459970474
+train/qrs_score:         0.8421
+
+                test/qrs_score:          0.8512
+                ---------------------------------
+
+2021-02-07 20:14:11,857 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:14:12,413 - ECG-SEQ-LAB - INFO - Checkpoint 125 saved!
+2021-02-07 20:14:40,698 - ECG-SEQ-LAB - INFO - Train step_880: loss : 0.08417201042175293
+2021-02-07 20:15:03,713 - ECG-SEQ-LAB - INFO - 
+                Train epoch_126:
+                --------------------
+                train/epoch_loss:        0.5869240090250969
+train/qrs_score:         0.8412
+
+                test/qrs_score:          0.8545
+                ---------------------------------
+
+2021-02-07 20:15:03,828 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:15:03,979 - ECG-SEQ-LAB - INFO - Checkpoint 126 saved!
+2021-02-07 20:15:47,094 - ECG-SEQ-LAB - INFO - 
+                Train epoch_127:
+                --------------------
+                train/epoch_loss:        0.5727599263191223
+train/qrs_score:         0.8419
+
+                test/qrs_score:          0.8582
+                ---------------------------------
+
+2021-02-07 20:15:47,111 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:15:47,260 - ECG-SEQ-LAB - INFO - Checkpoint 127 saved!
+2021-02-07 20:16:39,336 - ECG-SEQ-LAB - INFO - 
+                Train epoch_128:
+                --------------------
+                train/epoch_loss:        0.5898236185312271
+train/qrs_score:         0.8425
+
+                test/qrs_score:          0.8588
+                ---------------------------------
+
+2021-02-07 20:16:39,349 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:16:39,619 - ECG-SEQ-LAB - INFO - Checkpoint 128 saved!
+2021-02-07 20:17:02,048 - ECG-SEQ-LAB - INFO - Train step_900: loss : 0.08162274211645126
+2021-02-07 20:17:25,014 - ECG-SEQ-LAB - INFO - 
+                Train epoch_129:
+                --------------------
+                train/epoch_loss:        0.5807815119624138
+train/qrs_score:         0.8406
+
+                test/qrs_score:          0.86
+                ---------------------------------
+
+2021-02-07 20:17:25,032 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:17:25,152 - ECG-SEQ-LAB - INFO - Checkpoint 129 saved!
+2021-02-07 20:18:10,814 - ECG-SEQ-LAB - INFO - 
+                Train epoch_130:
+                --------------------
+                train/epoch_loss:        0.5760573148727417
+train/qrs_score:         0.8408
+
+                test/qrs_score:          0.861
+                ---------------------------------
+
+2021-02-07 20:18:10,823 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:18:11,038 - ECG-SEQ-LAB - INFO - Checkpoint 130 saved!
+2021-02-07 20:19:13,759 - ECG-SEQ-LAB - INFO - 
+                Train epoch_131:
+                --------------------
+                train/epoch_loss:        0.5739365145564079
+train/qrs_score:         0.8445
+
+                test/qrs_score:          0.8582
+                ---------------------------------
+
+2021-02-07 20:19:13,804 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:19:13,941 - ECG-SEQ-LAB - INFO - Checkpoint 131 saved!
+2021-02-07 20:19:32,101 - ECG-SEQ-LAB - INFO - Train step_920: loss : 0.0818098708987236
+2021-02-07 20:19:59,154 - ECG-SEQ-LAB - INFO - 
+                Train epoch_132:
+                --------------------
+                train/epoch_loss:        0.556973434984684
+train/qrs_score:         0.8459
+
+                test/qrs_score:          0.8622
+                ---------------------------------
+
+2021-02-07 20:19:59,164 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:19:59,260 - ECG-SEQ-LAB - INFO - Checkpoint 132 saved!
+2021-02-07 20:21:27,410 - ECG-SEQ-LAB - INFO - 
+                Train epoch_133:
+                --------------------
+                train/epoch_loss:        0.5599095374345779
+train/qrs_score:         0.8466
+
+                test/qrs_score:          0.8615
+                ---------------------------------
+
+2021-02-07 20:21:27,572 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:21:28,943 - ECG-SEQ-LAB - INFO - Checkpoint 133 saved!
+2021-02-07 20:24:39,736 - ECG-SEQ-LAB - INFO - 
+                Train epoch_134:
+                --------------------
+                train/epoch_loss:        0.5726302191615105
+train/qrs_score:         0.8459
+
+                test/qrs_score:          0.8632
+                ---------------------------------
+
+2021-02-07 20:24:40,853 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:24:41,605 - ECG-SEQ-LAB - INFO - Checkpoint 134 saved!
+2021-02-07 20:25:06,745 - ECG-SEQ-LAB - INFO - Train step_940: loss : 0.07995502650737762
+2021-02-07 20:25:50,601 - ECG-SEQ-LAB - INFO - 
+                Train epoch_135:
+                --------------------
+                train/epoch_loss:        0.5816454291343689
+train/qrs_score:         0.8477
+
+                test/qrs_score:          0.8675
+                ---------------------------------
+
+2021-02-07 20:25:50,615 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:25:50,743 - ECG-SEQ-LAB - INFO - Checkpoint 135 saved!
+2021-02-07 20:26:38,894 - ECG-SEQ-LAB - INFO - 
+                Train epoch_136:
+                --------------------
+                train/epoch_loss:        0.5586455836892128
+train/qrs_score:         0.8454
+
+                test/qrs_score:          0.861
+                ---------------------------------
+
+2021-02-07 20:26:38,899 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:26:39,104 - ECG-SEQ-LAB - INFO - Checkpoint 136 saved!
+2021-02-07 20:27:26,409 - ECG-SEQ-LAB - INFO - 
+                Train epoch_137:
+                --------------------
+                train/epoch_loss:        0.570572979748249
+train/qrs_score:         0.8452
+
+                test/qrs_score:          0.8658
+                ---------------------------------
+
+2021-02-07 20:27:26,419 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:27:26,519 - ECG-SEQ-LAB - INFO - Checkpoint 137 saved!
+2021-02-07 20:27:36,759 - ECG-SEQ-LAB - INFO - Train step_960: loss : 0.08348294347524643
+2021-02-07 20:28:09,596 - ECG-SEQ-LAB - INFO - 
+                Train epoch_138:
+                --------------------
+                train/epoch_loss:        0.5609190538525581
+train/qrs_score:         0.8442
+
+                test/qrs_score:          0.862
+                ---------------------------------
+
+2021-02-07 20:28:09,602 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:28:09,691 - ECG-SEQ-LAB - INFO - Checkpoint 138 saved!
+2021-02-07 20:28:54,314 - ECG-SEQ-LAB - INFO - 
+                Train epoch_139:
+                --------------------
+                train/epoch_loss:        0.5565754920244217
+train/qrs_score:         0.8469
+
+                test/qrs_score:          0.863
+                ---------------------------------
+
+2021-02-07 20:28:54,322 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:28:54,400 - ECG-SEQ-LAB - INFO - Checkpoint 139 saved!
+2021-02-07 20:29:25,952 - ECG-SEQ-LAB - INFO - Train step_980: loss : 0.06633350253105164
+2021-02-07 20:29:40,004 - ECG-SEQ-LAB - INFO - 
+                Train epoch_140:
+                --------------------
+                train/epoch_loss:        0.5481243580579758
+train/qrs_score:         0.8481
+
+                test/qrs_score:          0.8612
+                ---------------------------------
+
+2021-02-07 20:29:40,021 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:29:40,603 - ECG-SEQ-LAB - INFO - Checkpoint 140 saved!
+2021-02-07 20:30:26,210 - ECG-SEQ-LAB - INFO - 
+                Train epoch_141:
+                --------------------
+                train/epoch_loss:        0.5590577945113182
+train/qrs_score:         0.8515
+
+                test/qrs_score:          0.865
+                ---------------------------------
+
+2021-02-07 20:30:26,223 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:30:26,340 - ECG-SEQ-LAB - INFO - Checkpoint 141 saved!
+2021-02-07 20:32:39,199 - ECG-SEQ-LAB - INFO - 
+                Train epoch_142:
+                --------------------
+                train/epoch_loss:        0.5586597248911858
+train/qrs_score:         0.8499
+
+                test/qrs_score:          0.861
+                ---------------------------------
+
+2021-02-07 20:32:39,477 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:32:41,078 - ECG-SEQ-LAB - INFO - Checkpoint 142 saved!
+2021-02-07 20:34:52,153 - ECG-SEQ-LAB - INFO - Train step_1000: loss : 0.08210915327072144
+2021-02-07 20:36:42,105 - ECG-SEQ-LAB - INFO - 
+                Train epoch_143:
+                --------------------
+                train/epoch_loss:        0.5595088824629784
+train/qrs_score:         0.8497
+
+                test/qrs_score:          0.863
+                ---------------------------------
+
+2021-02-07 20:36:42,291 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:36:44,114 - ECG-SEQ-LAB - INFO - Checkpoint 143 saved!
+2021-02-07 20:41:18,860 - ECG-SEQ-LAB - INFO - 
+                Train epoch_144:
+                --------------------
+                train/epoch_loss:        0.5691916793584824
+train/qrs_score:         0.8477
+
+                test/qrs_score:          0.86
+                ---------------------------------
+
+2021-02-07 20:41:18,905 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:41:19,040 - ECG-SEQ-LAB - INFO - Checkpoint 144 saved!
+2021-02-07 20:42:01,497 - ECG-SEQ-LAB - INFO - 
+                Train epoch_145:
+                --------------------
+                train/epoch_loss:        0.5442245155572891
+train/qrs_score:         0.8496
+
+                test/qrs_score:          0.8652
+                ---------------------------------
+
+2021-02-07 20:42:01,502 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:42:01,580 - ECG-SEQ-LAB - INFO - Checkpoint 145 saved!
+2021-02-07 20:42:31,749 - ECG-SEQ-LAB - INFO - Train step_1020: loss : 0.07650293409824371
+2021-02-07 20:42:52,217 - ECG-SEQ-LAB - INFO - 
+                Train epoch_146:
+                --------------------
+                train/epoch_loss:        0.5468596816062927
+train/qrs_score:         0.8504
+
+                test/qrs_score:          0.866
+                ---------------------------------
+
+2021-02-07 20:42:52,225 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:42:52,363 - ECG-SEQ-LAB - INFO - Checkpoint 146 saved!
+2021-02-07 20:43:36,361 - ECG-SEQ-LAB - INFO - 
+                Train epoch_147:
+                --------------------
+                train/epoch_loss:        0.5537041574716568
+train/qrs_score:         0.8515
+
+                test/qrs_score:          0.8655
+                ---------------------------------
+
+2021-02-07 20:43:36,398 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:43:36,522 - ECG-SEQ-LAB - INFO - Checkpoint 147 saved!
+2021-02-07 20:44:32,900 - ECG-SEQ-LAB - INFO - 
+                Train epoch_148:
+                --------------------
+                train/epoch_loss:        0.5539017617702484
+train/qrs_score:         0.8486
+
+                test/qrs_score:          0.867
+                ---------------------------------
+
+2021-02-07 20:44:32,963 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:44:33,811 - ECG-SEQ-LAB - INFO - Checkpoint 148 saved!
+2021-02-07 20:45:17,893 - ECG-SEQ-LAB - INFO - Train step_1040: loss : 0.07696589082479477
+2021-02-07 20:45:53,305 - ECG-SEQ-LAB - INFO - 
+                Train epoch_149:
+                --------------------
+                train/epoch_loss:        0.5424157381057739
+train/qrs_score:         0.8538
+
+                test/qrs_score:          0.863
+                ---------------------------------
+
+2021-02-07 20:45:53,462 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:45:53,844 - ECG-SEQ-LAB - INFO - Checkpoint 149 saved!
+2021-02-07 20:46:52,099 - ECG-SEQ-LAB - INFO - 
+                Train epoch_150:
+                --------------------
+                train/epoch_loss:        0.553763210773468
+train/qrs_score:         0.8544
+
+                test/qrs_score:          0.8662
+                ---------------------------------
+
+2021-02-07 20:46:52,104 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:46:52,188 - ECG-SEQ-LAB - INFO - Checkpoint 150 saved!
+2021-02-07 20:47:38,612 - ECG-SEQ-LAB - INFO - 
+                Train epoch_151:
+                --------------------
+                train/epoch_loss:        0.548275537788868
+train/qrs_score:         0.8559
+
+                test/qrs_score:          0.8672
+                ---------------------------------
+
+2021-02-07 20:47:38,659 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:47:38,762 - ECG-SEQ-LAB - INFO - Checkpoint 151 saved!
+2021-02-07 20:48:00,319 - ECG-SEQ-LAB - INFO - Train step_1060: loss : 0.07959382981061935
+2021-02-07 20:48:27,950 - ECG-SEQ-LAB - INFO - 
+                Train epoch_152:
+                --------------------
+                train/epoch_loss:        0.5389939323067665
+train/qrs_score:         0.8533
+
+                test/qrs_score:          0.8662
+                ---------------------------------
+
+2021-02-07 20:48:27,959 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:48:28,404 - ECG-SEQ-LAB - INFO - Checkpoint 152 saved!
+2021-02-07 20:49:20,695 - ECG-SEQ-LAB - INFO - 
+                Train epoch_153:
+                --------------------
+                train/epoch_loss:        0.5405334904789925
+train/qrs_score:         0.8519
+
+                test/qrs_score:          0.8695
+                ---------------------------------
+
+2021-02-07 20:49:20,833 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:49:21,023 - ECG-SEQ-LAB - INFO - Checkpoint 153 saved!
+2021-02-07 20:50:05,507 - ECG-SEQ-LAB - INFO - 
+                Train epoch_154:
+                --------------------
+                train/epoch_loss:        0.5403478890657425
+train/qrs_score:         0.8519
+
+                test/qrs_score:          0.8635
+                ---------------------------------
+
+2021-02-07 20:50:05,513 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:50:05,630 - ECG-SEQ-LAB - INFO - Checkpoint 154 saved!
+2021-02-07 20:50:20,696 - ECG-SEQ-LAB - INFO - Train step_1080: loss : 0.07942529022693634
+2021-02-07 20:50:49,407 - ECG-SEQ-LAB - INFO - 
+                Train epoch_155:
+                --------------------
+                train/epoch_loss:        0.5481733307242393
+train/qrs_score:         0.8554
+
+                test/qrs_score:          0.8698
+                ---------------------------------
+
+2021-02-07 20:50:49,416 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:50:49,536 - ECG-SEQ-LAB - INFO - Checkpoint 155 saved!
+2021-02-07 20:52:30,997 - ECG-SEQ-LAB - INFO - 
+                Train epoch_156:
+                --------------------
+                train/epoch_loss:        0.5553038418292999
+train/qrs_score:         0.8504
+
+                test/qrs_score:          0.867
+                ---------------------------------
+
+2021-02-07 20:52:31,201 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:52:32,573 - ECG-SEQ-LAB - INFO - Checkpoint 156 saved!
+2021-02-07 20:53:30,906 - ECG-SEQ-LAB - INFO - 
+                Train epoch_157:
+                --------------------
+                train/epoch_loss:        0.5406496152281761
+train/qrs_score:         0.851
+
+                test/qrs_score:          0.8632
+                ---------------------------------
+
+2021-02-07 20:53:30,910 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:53:31,005 - ECG-SEQ-LAB - INFO - Checkpoint 157 saved!
+2021-02-07 20:53:41,216 - ECG-SEQ-LAB - INFO - Train step_1100: loss : 0.07110113650560379
+2021-02-07 20:54:13,720 - ECG-SEQ-LAB - INFO - 
+                Train epoch_158:
+                --------------------
+                train/epoch_loss:        0.547952726483345
+train/qrs_score:         0.8523
+
+                test/qrs_score:          0.8648
+                ---------------------------------
+
+2021-02-07 20:54:13,729 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:54:13,786 - ECG-SEQ-LAB - INFO - Checkpoint 158 saved!
+2021-02-07 20:55:08,236 - ECG-SEQ-LAB - INFO - 
+                Train epoch_159:
+                --------------------
+                train/epoch_loss:        0.5467469617724419
+train/qrs_score:         0.8534
+
+                test/qrs_score:          0.8732
+                ---------------------------------
+
+2021-02-07 20:55:08,241 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:55:08,349 - ECG-SEQ-LAB - INFO - Checkpoint 159 saved!
+2021-02-07 20:55:40,248 - ECG-SEQ-LAB - INFO - Train step_1120: loss : 0.07306981086730957
+2021-02-07 20:55:55,895 - ECG-SEQ-LAB - INFO - 
+                Train epoch_160:
+                --------------------
+                train/epoch_loss:        0.537092462182045
+train/qrs_score:         0.8529
+
+                test/qrs_score:          0.8698
+                ---------------------------------
+
+2021-02-07 20:55:55,974 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:55:56,612 - ECG-SEQ-LAB - INFO - Checkpoint 160 saved!
+2021-02-07 20:56:44,101 - ECG-SEQ-LAB - INFO - 
+                Train epoch_161:
+                --------------------
+                train/epoch_loss:        0.5256844460964203
+train/qrs_score:         0.8515
+
+                test/qrs_score:          0.8685
+                ---------------------------------
+
+2021-02-07 20:56:44,107 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:56:44,167 - ECG-SEQ-LAB - INFO - Checkpoint 161 saved!
+2021-02-07 20:57:28,094 - ECG-SEQ-LAB - INFO - 
+                Train epoch_162:
+                --------------------
+                train/epoch_loss:        0.5358442813158035
+train/qrs_score:         0.853
+
+                test/qrs_score:          0.8708
+                ---------------------------------
+
+2021-02-07 20:57:28,101 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:57:28,238 - ECG-SEQ-LAB - INFO - Checkpoint 162 saved!
+2021-02-07 20:57:57,996 - ECG-SEQ-LAB - INFO - Train step_1140: loss : 0.07234940677881241
+2021-02-07 20:58:13,228 - ECG-SEQ-LAB - INFO - 
+                Train epoch_163:
+                --------------------
+                train/epoch_loss:        0.5382031053304672
+train/qrs_score:         0.856
+
+                test/qrs_score:          0.8722
+                ---------------------------------
+
+2021-02-07 20:58:13,300 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:58:13,589 - ECG-SEQ-LAB - INFO - Checkpoint 163 saved!
+2021-02-07 20:58:59,418 - ECG-SEQ-LAB - INFO - 
+                Train epoch_164:
+                --------------------
+                train/epoch_loss:        0.5266230031847954
+train/qrs_score:         0.8534
+
+                test/qrs_score:          0.8722
+                ---------------------------------
+
+2021-02-07 20:58:59,427 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:58:59,504 - ECG-SEQ-LAB - INFO - Checkpoint 164 saved!
+2021-02-07 20:59:45,720 - ECG-SEQ-LAB - INFO - 
+                Train epoch_165:
+                --------------------
+                train/epoch_loss:        0.5263561010360718
+train/qrs_score:         0.8584
+
+                test/qrs_score:          0.8755
+                ---------------------------------
+
+2021-02-07 20:59:45,725 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 20:59:45,846 - ECG-SEQ-LAB - INFO - Checkpoint 165 saved!
+2021-02-07 21:00:12,823 - ECG-SEQ-LAB - INFO - Train step_1160: loss : 0.07239356637001038
+2021-02-07 21:00:29,918 - ECG-SEQ-LAB - INFO - 
+                Train epoch_166:
+                --------------------
+                train/epoch_loss:        0.5229898691177368
+train/qrs_score:         0.8559
+
+                test/qrs_score:          0.8702
+                ---------------------------------
+
+2021-02-07 21:00:29,928 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:00:30,176 - ECG-SEQ-LAB - INFO - Checkpoint 166 saved!
+2021-02-07 21:04:50,095 - ECG-SEQ-LAB - INFO - 
+                Train epoch_167:
+                --------------------
+                train/epoch_loss:        0.5252826735377312
+train/qrs_score:         0.858
+
+                test/qrs_score:          0.871
+                ---------------------------------
+
+2021-02-07 21:04:50,583 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:04:51,243 - ECG-SEQ-LAB - INFO - Checkpoint 167 saved!
+2021-02-07 21:12:09,053 - ECG-SEQ-LAB - INFO - 
+                Train epoch_168:
+                --------------------
+                train/epoch_loss:        0.5206683427095413
+train/qrs_score:         0.858
+
+                test/qrs_score:          0.8698
+                ---------------------------------
+
+2021-02-07 21:12:09,179 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:12:09,972 - ECG-SEQ-LAB - INFO - Checkpoint 168 saved!
+2021-02-07 21:14:35,420 - ECG-SEQ-LAB - INFO - Train step_1180: loss : 0.0672057569026947
+2021-02-07 21:15:57,916 - ECG-SEQ-LAB - INFO - 
+                Train epoch_169:
+                --------------------
+                train/epoch_loss:        0.5290984809398651
+train/qrs_score:         0.8542
+
+                test/qrs_score:          0.873
+                ---------------------------------
+
+2021-02-07 21:15:57,944 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:15:58,025 - ECG-SEQ-LAB - INFO - Checkpoint 169 saved!
+2021-02-07 21:16:40,434 - ECG-SEQ-LAB - INFO - 
+                Train epoch_170:
+                --------------------
+                train/epoch_loss:        0.5175338387489319
+train/qrs_score:         0.8556
+
+                test/qrs_score:          0.874
+                ---------------------------------
+
+2021-02-07 21:16:40,438 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:16:40,660 - ECG-SEQ-LAB - INFO - Checkpoint 170 saved!
+2021-02-07 21:17:24,823 - ECG-SEQ-LAB - INFO - 
+                Train epoch_171:
+                --------------------
+                train/epoch_loss:        0.5142135061323643
+train/qrs_score:         0.8599
+
+                test/qrs_score:          0.8718
+                ---------------------------------
+
+2021-02-07 21:17:24,831 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:17:24,892 - ECG-SEQ-LAB - INFO - Checkpoint 171 saved!
+2021-02-07 21:17:42,596 - ECG-SEQ-LAB - INFO - Train step_1200: loss : 0.07274671643972397
+2021-02-07 21:18:35,195 - ECG-SEQ-LAB - INFO - 
+                Train epoch_172:
+                --------------------
+                train/epoch_loss:        0.5250936076045036
+train/qrs_score:         0.8602
+
+                test/qrs_score:          0.8695
+                ---------------------------------
+
+2021-02-07 21:18:35,414 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:18:35,734 - ECG-SEQ-LAB - INFO - Checkpoint 172 saved!
+2021-02-07 21:19:45,994 - ECG-SEQ-LAB - INFO - 
+                Train epoch_173:
+                --------------------
+                train/epoch_loss:        0.5221559405326843
+train/qrs_score:         0.8638
+
+                test/qrs_score:          0.867
+                ---------------------------------
+
+2021-02-07 21:19:46,017 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:19:46,139 - ECG-SEQ-LAB - INFO - Checkpoint 173 saved!
+2021-02-07 21:20:28,219 - ECG-SEQ-LAB - INFO - 
+                Train epoch_174:
+                --------------------
+                train/epoch_loss:        0.5252901613712311
+train/qrs_score:         0.8666
+
+                test/qrs_score:          0.8698
+                ---------------------------------
+
+2021-02-07 21:20:28,223 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:20:28,333 - ECG-SEQ-LAB - INFO - Checkpoint 174 saved!
+2021-02-07 21:20:43,446 - ECG-SEQ-LAB - INFO - Train step_1220: loss : 0.0745273157954216
+2021-02-07 21:21:13,313 - ECG-SEQ-LAB - INFO - 
+                Train epoch_175:
+                --------------------
+                train/epoch_loss:        0.5178642868995667
+train/qrs_score:         0.8632
+
+                test/qrs_score:          0.8745
+                ---------------------------------
+
+2021-02-07 21:21:13,325 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:21:13,389 - ECG-SEQ-LAB - INFO - Checkpoint 175 saved!
+2021-02-07 21:22:10,429 - ECG-SEQ-LAB - INFO - 
+                Train epoch_176:
+                --------------------
+                train/epoch_loss:        0.5120207741856575
+train/qrs_score:         0.8622
+
+                test/qrs_score:          0.8742
+                ---------------------------------
+
+2021-02-07 21:22:10,447 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:22:11,333 - ECG-SEQ-LAB - INFO - Checkpoint 176 saved!
+2021-02-07 21:23:06,751 - ECG-SEQ-LAB - INFO - 
+                Train epoch_177:
+                --------------------
+                train/epoch_loss:        0.5275020077824593
+train/qrs_score:         0.8649
+
+                test/qrs_score:          0.874
+                ---------------------------------
+
+2021-02-07 21:23:06,763 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:23:06,909 - ECG-SEQ-LAB - INFO - Checkpoint 177 saved!
+2021-02-07 21:23:17,147 - ECG-SEQ-LAB - INFO - Train step_1240: loss : 0.08146526664495468
+2021-02-07 21:23:49,101 - ECG-SEQ-LAB - INFO - 
+                Train epoch_178:
+                --------------------
+                train/epoch_loss:        0.5149971768260002
+train/qrs_score:         0.8643
+
+                test/qrs_score:          0.8738
+                ---------------------------------
+
+2021-02-07 21:23:49,107 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:23:49,229 - ECG-SEQ-LAB - INFO - Checkpoint 178 saved!
+2021-02-07 21:24:31,804 - ECG-SEQ-LAB - INFO - 
+                Train epoch_179:
+                --------------------
+                train/epoch_loss:        0.5097072869539261
+train/qrs_score:         0.8665
+
+                test/qrs_score:          0.8728
+                ---------------------------------
+
+2021-02-07 21:24:31,815 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:24:31,873 - ECG-SEQ-LAB - INFO - Checkpoint 179 saved!
+2021-02-07 21:25:01,996 - ECG-SEQ-LAB - INFO - Train step_1260: loss : 0.0721270740032196
+2021-02-07 21:25:15,133 - ECG-SEQ-LAB - INFO - 
+                Train epoch_180:
+                --------------------
+                train/epoch_loss:        0.5200100541114807
+train/qrs_score:         0.8611
+
+                test/qrs_score:          0.876
+                ---------------------------------
+
+2021-02-07 21:25:15,138 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:25:15,196 - ECG-SEQ-LAB - INFO - Checkpoint 180 saved!
+2021-02-07 21:25:58,493 - ECG-SEQ-LAB - INFO - 
+                Train epoch_181:
+                --------------------
+                train/epoch_loss:        0.5229078456759453
+train/qrs_score:         0.8623
+
+                test/qrs_score:          0.877
+                ---------------------------------
+
+2021-02-07 21:25:58,504 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:25:58,555 - ECG-SEQ-LAB - INFO - Checkpoint 181 saved!
+2021-02-07 21:26:39,858 - ECG-SEQ-LAB - INFO - 
+                Train epoch_182:
+                --------------------
+                train/epoch_loss:        0.5273823142051697
+train/qrs_score:         0.8629
+
+                test/qrs_score:          0.874
+                ---------------------------------
+
+2021-02-07 21:26:39,900 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:26:39,957 - ECG-SEQ-LAB - INFO - Checkpoint 182 saved!
+2021-02-07 21:27:09,596 - ECG-SEQ-LAB - INFO - Train step_1280: loss : 0.07565062493085861
+2021-02-07 21:27:22,701 - ECG-SEQ-LAB - INFO - 
+                Train epoch_183:
+                --------------------
+                train/epoch_loss:        0.5181872248649597
+train/qrs_score:         0.8682
+
+                test/qrs_score:          0.8772
+                ---------------------------------
+
+2021-02-07 21:27:22,708 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:27:22,965 - ECG-SEQ-LAB - INFO - Checkpoint 183 saved!
+2021-02-07 21:28:04,695 - ECG-SEQ-LAB - INFO - 
+                Train epoch_184:
+                --------------------
+                train/epoch_loss:        0.5081053823232651
+train/qrs_score:         0.8684
+
+                test/qrs_score:          0.8798
+                ---------------------------------
+
+2021-02-07 21:28:04,699 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:28:04,744 - ECG-SEQ-LAB - INFO - Checkpoint 184 saved!
+2021-02-07 21:28:47,814 - ECG-SEQ-LAB - INFO - 
+                Train epoch_185:
+                --------------------
+                train/epoch_loss:        0.5154784917831421
+train/qrs_score:         0.8671
+
+                test/qrs_score:          0.8802
+                ---------------------------------
+
+2021-02-07 21:28:47,823 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:28:47,867 - ECG-SEQ-LAB - INFO - Checkpoint 185 saved!
+2021-02-07 21:30:18,097 - ECG-SEQ-LAB - INFO - Train step_1300: loss : 0.08021774888038635
+2021-02-07 21:30:39,372 - ECG-SEQ-LAB - INFO - 
+                Train epoch_186:
+                --------------------
+                train/epoch_loss:        0.5246594399213791
+train/qrs_score:         0.8669
+
+                test/qrs_score:          0.876
+                ---------------------------------
+
+2021-02-07 21:30:39,386 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:30:39,520 - ECG-SEQ-LAB - INFO - Checkpoint 186 saved!
+2021-02-07 21:31:24,001 - ECG-SEQ-LAB - INFO - 
+                Train epoch_187:
+                --------------------
+                train/epoch_loss:        0.5090887770056725
+train/qrs_score:         0.8721
+
+                test/qrs_score:          0.8735
+                ---------------------------------
+
+2021-02-07 21:31:24,016 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:31:24,609 - ECG-SEQ-LAB - INFO - Checkpoint 187 saved!
+2021-02-07 21:34:22,002 - ECG-SEQ-LAB - INFO - 
+                Train epoch_188:
+                --------------------
+                train/epoch_loss:        0.5100006461143494
+train/qrs_score:         0.872
+
+                test/qrs_score:          0.8765
+                ---------------------------------
+
+2021-02-07 21:34:22,326 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:34:23,535 - ECG-SEQ-LAB - INFO - Checkpoint 188 saved!
+2021-02-07 21:36:14,021 - ECG-SEQ-LAB - INFO - Train step_1320: loss : 0.06689178198575974
+2021-02-07 21:39:05,402 - ECG-SEQ-LAB - INFO - 
+                Train epoch_189:
+                --------------------
+                train/epoch_loss:        0.5132169723510742
+train/qrs_score:         0.873
+
+                test/qrs_score:          0.8785
+                ---------------------------------
+
+2021-02-07 21:39:05,610 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:39:06,045 - ECG-SEQ-LAB - INFO - Checkpoint 189 saved!
+2021-02-07 21:41:45,150 - ECG-SEQ-LAB - INFO - 
+                Train epoch_190:
+                --------------------
+                train/epoch_loss:        0.5141038075089455
+train/qrs_score:         0.8725
+
+                test/qrs_score:          0.8825
+                ---------------------------------
+
+2021-02-07 21:41:45,245 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:41:45,952 - ECG-SEQ-LAB - INFO - Checkpoint 190 saved!
+2021-02-07 21:43:12,457 - ECG-SEQ-LAB - INFO - 
+                Train epoch_191:
+                --------------------
+                train/epoch_loss:        0.5087367594242096
+train/qrs_score:         0.8742
+
+                test/qrs_score:          0.8755
+                ---------------------------------
+
+2021-02-07 21:43:12,513 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:43:12,944 - ECG-SEQ-LAB - INFO - Checkpoint 191 saved!
+2021-02-07 21:44:45,939 - ECG-SEQ-LAB - INFO - Train step_1340: loss : 0.07491036504507065
+2021-02-07 21:49:09,726 - ECG-SEQ-LAB - INFO - 
+                Train epoch_192:
+                --------------------
+                train/epoch_loss:        0.5064357072114944
+train/qrs_score:         0.873
+
+                test/qrs_score:          0.8728
+                ---------------------------------
+
+2021-02-07 21:49:10,038 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:49:10,888 - ECG-SEQ-LAB - INFO - Checkpoint 192 saved!
+2021-02-07 21:51:00,853 - ECG-SEQ-LAB - INFO - 
+                Train epoch_193:
+                --------------------
+                train/epoch_loss:        0.4910476878285408
+train/qrs_score:         0.8724
+
+                test/qrs_score:          0.8785
+                ---------------------------------
+
+2021-02-07 21:51:00,894 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:51:01,158 - ECG-SEQ-LAB - INFO - Checkpoint 193 saved!
+2021-02-07 21:52:43,211 - ECG-SEQ-LAB - INFO - 
+                Train epoch_194:
+                --------------------
+                train/epoch_loss:        0.4997347667813301
+train/qrs_score:         0.8766
+
+                test/qrs_score:          0.8792
+                ---------------------------------
+
+2021-02-07 21:52:45,913 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:52:46,505 - ECG-SEQ-LAB - INFO - Checkpoint 194 saved!
+2021-02-07 21:53:29,650 - ECG-SEQ-LAB - INFO - Train step_1360: loss : 0.07010772824287415
+2021-02-07 21:53:53,803 - ECG-SEQ-LAB - INFO - 
+                Train epoch_195:
+                --------------------
+                train/epoch_loss:        0.5045997053384781
+train/qrs_score:         0.8761
+
+                test/qrs_score:          0.8808
+                ---------------------------------
+
+2021-02-07 21:53:53,814 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:53:53,920 - ECG-SEQ-LAB - INFO - Checkpoint 195 saved!
+2021-02-07 21:54:52,770 - ECG-SEQ-LAB - INFO - 
+                Train epoch_196:
+                --------------------
+                train/epoch_loss:        0.49789098650217056
+train/qrs_score:         0.8776
+
+                test/qrs_score:          0.8808
+                ---------------------------------
+
+2021-02-07 21:54:52,783 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:54:53,454 - ECG-SEQ-LAB - INFO - Checkpoint 196 saved!
+2021-02-07 21:55:50,196 - ECG-SEQ-LAB - INFO - 
+                Train epoch_197:
+                --------------------
+                train/epoch_loss:        0.5056680738925934
+train/qrs_score:         0.8771
+
+                test/qrs_score:          0.8782
+                ---------------------------------
+
+2021-02-07 21:55:50,208 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:55:50,377 - ECG-SEQ-LAB - INFO - Checkpoint 197 saved!
+2021-02-07 21:56:00,416 - ECG-SEQ-LAB - INFO - Train step_1380: loss : 0.06947674602270126
+2021-02-07 21:56:27,820 - ECG-SEQ-LAB - INFO - 
+                Train epoch_198:
+                --------------------
+                train/epoch_loss:        0.5019428506493568
+train/qrs_score:         0.8744
+
+                test/qrs_score:          0.882
+                ---------------------------------
+
+2021-02-07 21:56:27,824 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:56:28,027 - ECG-SEQ-LAB - INFO - Checkpoint 198 saved!
+2021-02-07 21:57:10,778 - ECG-SEQ-LAB - INFO - 
+                Train epoch_199:
+                --------------------
+                train/epoch_loss:        0.5014243051409721
+train/qrs_score:         0.8742
+
+                test/qrs_score:          0.8752
+                ---------------------------------
+
+2021-02-07 21:57:10,856 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:57:11,513 - ECG-SEQ-LAB - INFO - Checkpoint 199 saved!
+2021-02-07 21:57:47,741 - ECG-SEQ-LAB - INFO - Train step_1400: loss : 0.07491838932037354
+2021-02-07 21:57:57,562 - ECG-SEQ-LAB - INFO - 
+                Train epoch_200:
+                --------------------
+                train/epoch_loss:        0.5015954300761223
+train/qrs_score:         0.8753
+
+                test/qrs_score:          0.8788
+                ---------------------------------
+
+2021-02-07 21:57:57,569 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:57:57,622 - ECG-SEQ-LAB - INFO - Checkpoint 200 saved!
+2021-02-07 21:58:31,770 - ECG-SEQ-LAB - INFO - 
+                Train epoch_201:
+                --------------------
+                train/epoch_loss:        0.5009344592690468
+train/qrs_score:         0.8806
+
+                test/qrs_score:          0.8825
+                ---------------------------------
+
+2021-02-07 21:58:31,791 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:58:31,883 - ECG-SEQ-LAB - INFO - Checkpoint 201 saved!
+2021-02-07 21:59:04,088 - ECG-SEQ-LAB - INFO - 
+                Train epoch_202:
+                --------------------
+                train/epoch_loss:        0.5001527070999146
+train/qrs_score:         0.8757
+
+                test/qrs_score:          0.8818
+                ---------------------------------
+
+2021-02-07 21:59:04,093 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:59:04,164 - ECG-SEQ-LAB - INFO - Checkpoint 202 saved!
+2021-02-07 21:59:28,056 - ECG-SEQ-LAB - INFO - Train step_1420: loss : 0.07428791373968124
+2021-02-07 21:59:39,620 - ECG-SEQ-LAB - INFO - 
+                Train epoch_203:
+                --------------------
+                train/epoch_loss:        0.4911744222044945
+train/qrs_score:         0.8783
+
+                test/qrs_score:          0.8818
+                ---------------------------------
+
+2021-02-07 21:59:39,631 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 21:59:39,703 - ECG-SEQ-LAB - INFO - Checkpoint 203 saved!
+2021-02-07 22:00:35,965 - ECG-SEQ-LAB - INFO - 
+                Train epoch_204:
+                --------------------
+                train/epoch_loss:        0.49154315888881683
+train/qrs_score:         0.8741
+
+                test/qrs_score:          0.8812
+                ---------------------------------
+
+2021-02-07 22:00:35,992 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:00:37,247 - ECG-SEQ-LAB - INFO - Checkpoint 204 saved!
+2021-02-07 22:01:17,097 - ECG-SEQ-LAB - INFO - 
+                Train epoch_205:
+                --------------------
+                train/epoch_loss:        0.4983831197023392
+train/qrs_score:         0.8798
+
+                test/qrs_score:          0.8825
+                ---------------------------------
+
+2021-02-07 22:01:17,108 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:01:17,227 - ECG-SEQ-LAB - INFO - Checkpoint 205 saved!
+2021-02-07 22:01:37,628 - ECG-SEQ-LAB - INFO - Train step_1440: loss : 0.07268223911523819
+2021-02-07 22:01:50,192 - ECG-SEQ-LAB - INFO - 
+                Train epoch_206:
+                --------------------
+                train/epoch_loss:        0.49778155237436295
+train/qrs_score:         0.8795
+
+                test/qrs_score:          0.8868
+                ---------------------------------
+
+2021-02-07 22:01:50,219 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:01:50,307 - ECG-SEQ-LAB - INFO - Checkpoint 206 saved!
+2021-02-07 22:02:24,096 - ECG-SEQ-LAB - INFO - 
+                Train epoch_207:
+                --------------------
+                train/epoch_loss:        0.4958649352192879
+train/qrs_score:         0.8812
+
+                test/qrs_score:          0.8865
+                ---------------------------------
+
+2021-02-07 22:02:24,106 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:02:24,205 - ECG-SEQ-LAB - INFO - Checkpoint 207 saved!
+2021-02-07 22:03:00,092 - ECG-SEQ-LAB - INFO - 
+                Train epoch_208:
+                --------------------
+                train/epoch_loss:        0.48792697489261627
+train/qrs_score:         0.8834
+
+                test/qrs_score:          0.883
+                ---------------------------------
+
+2021-02-07 22:03:00,098 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:03:00,228 - ECG-SEQ-LAB - INFO - Checkpoint 208 saved!
+2021-02-07 22:03:18,227 - ECG-SEQ-LAB - INFO - Train step_1460: loss : 0.0741608589887619
+2021-02-07 22:03:34,584 - ECG-SEQ-LAB - INFO - 
+                Train epoch_209:
+                --------------------
+                train/epoch_loss:        0.47959038615226746
+train/qrs_score:         0.8831
+
+                test/qrs_score:          0.8838
+                ---------------------------------
+
+2021-02-07 22:03:34,595 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:03:34,723 - ECG-SEQ-LAB - INFO - Checkpoint 209 saved!
+2021-02-07 22:04:08,568 - ECG-SEQ-LAB - INFO - 
+                Train epoch_210:
+                --------------------
+                train/epoch_loss:        0.47907117009162903
+train/qrs_score:         0.8834
+
+                test/qrs_score:          0.886
+                ---------------------------------
+
+2021-02-07 22:04:08,572 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:04:08,635 - ECG-SEQ-LAB - INFO - Checkpoint 210 saved!
+2021-02-07 22:04:44,392 - ECG-SEQ-LAB - INFO - 
+                Train epoch_211:
+                --------------------
+                train/epoch_loss:        0.5015542879700661
+train/qrs_score:         0.8858
+
+                test/qrs_score:          0.8853
+                ---------------------------------
+
+2021-02-07 22:04:44,490 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:04:44,631 - ECG-SEQ-LAB - INFO - Checkpoint 211 saved!
+2021-02-07 22:05:00,190 - ECG-SEQ-LAB - INFO - Train step_1480: loss : 0.06596516817808151
+2021-02-07 22:05:19,252 - ECG-SEQ-LAB - INFO - 
+                Train epoch_212:
+                --------------------
+                train/epoch_loss:        0.4865921586751938
+train/qrs_score:         0.8844
+
+                test/qrs_score:          0.8848
+                ---------------------------------
+
+2021-02-07 22:05:19,259 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:05:19,357 - ECG-SEQ-LAB - INFO - Checkpoint 212 saved!
+2021-02-07 22:05:52,831 - ECG-SEQ-LAB - INFO - 
+                Train epoch_213:
+                --------------------
+                train/epoch_loss:        0.4923546686768532
+train/qrs_score:         0.8862
+
+                test/qrs_score:          0.8855
+                ---------------------------------
+
+2021-02-07 22:05:52,841 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:05:52,964 - ECG-SEQ-LAB - INFO - Checkpoint 213 saved!
+2021-02-07 22:07:09,779 - ECG-SEQ-LAB - INFO - 
+                Train epoch_214:
+                --------------------
+                train/epoch_loss:        0.48439212143421173
+train/qrs_score:         0.8871
+
+                test/qrs_score:          0.8858
+                ---------------------------------
+
+2021-02-07 22:07:09,794 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:07:09,890 - ECG-SEQ-LAB - INFO - Checkpoint 214 saved!
+2021-02-07 22:07:30,117 - ECG-SEQ-LAB - INFO - Train step_1500: loss : 0.06984449177980423
+2021-02-07 22:07:52,681 - ECG-SEQ-LAB - INFO - 
+                Train epoch_215:
+                --------------------
+                train/epoch_loss:        0.49254073947668076
+train/qrs_score:         0.8812
+
+                test/qrs_score:          0.8825
+                ---------------------------------
+
+2021-02-07 22:07:52,686 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:07:52,821 - ECG-SEQ-LAB - INFO - Checkpoint 215 saved!
+2021-02-07 22:08:26,572 - ECG-SEQ-LAB - INFO - 
+                Train epoch_216:
+                --------------------
+                train/epoch_loss:        0.4835120663046837
+train/qrs_score:         0.8834
+
+                test/qrs_score:          0.8818
+                ---------------------------------
+
+2021-02-07 22:08:26,582 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:08:26,651 - ECG-SEQ-LAB - INFO - Checkpoint 216 saved!
+2021-02-07 22:09:05,544 - ECG-SEQ-LAB - INFO - 
+                Train epoch_217:
+                --------------------
+                train/epoch_loss:        0.4881371222436428
+train/qrs_score:         0.884
+
+                test/qrs_score:          0.8855
+                ---------------------------------
+
+2021-02-07 22:09:05,570 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:09:06,569 - ECG-SEQ-LAB - INFO - Checkpoint 217 saved!
+2021-02-07 22:09:17,989 - ECG-SEQ-LAB - INFO - Train step_1520: loss : 0.06883958727121353
+2021-02-07 22:09:43,501 - ECG-SEQ-LAB - INFO - 
+                Train epoch_218:
+                --------------------
+                train/epoch_loss:        0.4837697893381119
+train/qrs_score:         0.8897
+
+                test/qrs_score:          0.8822
+                ---------------------------------
+
+2021-02-07 22:09:43,750 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:09:43,884 - ECG-SEQ-LAB - INFO - Checkpoint 218 saved!
+2021-02-07 22:10:16,977 - ECG-SEQ-LAB - INFO - 
+                Train epoch_219:
+                --------------------
+                train/epoch_loss:        0.48060205578804016
+train/qrs_score:         0.8898
+
+                test/qrs_score:          0.884
+                ---------------------------------
+
+2021-02-07 22:10:16,982 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:10:17,044 - ECG-SEQ-LAB - INFO - Checkpoint 219 saved!
+2021-02-07 22:10:41,361 - ECG-SEQ-LAB - INFO - Train step_1540: loss : 0.06986694782972336
+2021-02-07 22:10:51,674 - ECG-SEQ-LAB - INFO - 
+                Train epoch_220:
+                --------------------
+                train/epoch_loss:        0.4800419472157955
+train/qrs_score:         0.8885
+
+                test/qrs_score:          0.887
+                ---------------------------------
+
+2021-02-07 22:10:51,686 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:10:51,747 - ECG-SEQ-LAB - INFO - Checkpoint 220 saved!
+2021-02-07 22:11:25,837 - ECG-SEQ-LAB - INFO - 
+                Train epoch_221:
+                --------------------
+                train/epoch_loss:        0.47996315360069275
+train/qrs_score:         0.8884
+
+                test/qrs_score:          0.887
+                ---------------------------------
+
+2021-02-07 22:11:25,844 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:11:26,447 - ECG-SEQ-LAB - INFO - Checkpoint 221 saved!
+2021-02-07 22:12:04,020 - ECG-SEQ-LAB - INFO - 
+                Train epoch_222:
+                --------------------
+                train/epoch_loss:        0.4844610095024109
+train/qrs_score:         0.8859
+
+                test/qrs_score:          0.8818
+                ---------------------------------
+
+2021-02-07 22:12:04,031 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:12:04,496 - ECG-SEQ-LAB - INFO - Checkpoint 222 saved!
+2021-02-07 22:12:28,576 - ECG-SEQ-LAB - INFO - Train step_1560: loss : 0.07394273579120636
+2021-02-07 22:12:37,878 - ECG-SEQ-LAB - INFO - 
+                Train epoch_223:
+                --------------------
+                train/epoch_loss:        0.4805564507842064
+train/qrs_score:         0.8817
+
+                test/qrs_score:          0.883
+                ---------------------------------
+
+2021-02-07 22:12:37,886 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:12:38,010 - ECG-SEQ-LAB - INFO - Checkpoint 223 saved!
+2021-02-07 22:13:12,899 - ECG-SEQ-LAB - INFO - 
+                Train epoch_224:
+                --------------------
+                train/epoch_loss:        0.4780564159154892
+train/qrs_score:         0.8855
+
+                test/qrs_score:          0.8832
+                ---------------------------------
+
+2021-02-07 22:13:12,917 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:13:12,991 - ECG-SEQ-LAB - INFO - Checkpoint 224 saved!
+2021-02-07 22:13:48,515 - ECG-SEQ-LAB - INFO - 
+                Train epoch_225:
+                --------------------
+                train/epoch_loss:        0.4689340889453888
+train/qrs_score:         0.8865
+
+                test/qrs_score:          0.8862
+                ---------------------------------
+
+2021-02-07 22:13:48,519 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:13:48,700 - ECG-SEQ-LAB - INFO - Checkpoint 225 saved!
+2021-02-07 22:14:09,918 - ECG-SEQ-LAB - INFO - Train step_1580: loss : 0.06620044261217117
+2021-02-07 22:14:23,622 - ECG-SEQ-LAB - INFO - 
+                Train epoch_226:
+                --------------------
+                train/epoch_loss:        0.46520183607935905
+train/qrs_score:         0.8889
+
+                test/qrs_score:          0.8918
+                ---------------------------------
+
+2021-02-07 22:14:23,633 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:14:23,763 - ECG-SEQ-LAB - INFO - Checkpoint 226 saved!
+2021-02-07 22:15:00,688 - ECG-SEQ-LAB - INFO - 
+                Train epoch_227:
+                --------------------
+                train/epoch_loss:        0.46873243153095245
+train/qrs_score:         0.8894
+
+                test/qrs_score:          0.891
+                ---------------------------------
+
+2021-02-07 22:15:00,693 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:15:00,788 - ECG-SEQ-LAB - INFO - Checkpoint 227 saved!
+2021-02-07 22:15:34,480 - ECG-SEQ-LAB - INFO - 
+                Train epoch_228:
+                --------------------
+                train/epoch_loss:        0.47875379025936127
+train/qrs_score:         0.8916
+
+                test/qrs_score:          0.8908
+                ---------------------------------
+
+2021-02-07 22:15:34,491 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:15:34,742 - ECG-SEQ-LAB - INFO - Checkpoint 228 saved!
+2021-02-07 22:15:52,144 - ECG-SEQ-LAB - INFO - Train step_1600: loss : 0.06525728851556778
+2021-02-07 22:16:11,350 - ECG-SEQ-LAB - INFO - 
+                Train epoch_229:
+                --------------------
+                train/epoch_loss:        0.4738428294658661
+train/qrs_score:         0.8907
+
+                test/qrs_score:          0.8918
+                ---------------------------------
+
+2021-02-07 22:16:11,355 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:16:11,495 - ECG-SEQ-LAB - INFO - Checkpoint 229 saved!
+2021-02-07 22:16:44,834 - ECG-SEQ-LAB - INFO - 
+                Train epoch_230:
+                --------------------
+                train/epoch_loss:        0.47719110548496246
+train/qrs_score:         0.8928
+
+                test/qrs_score:          0.8825
+                ---------------------------------
+
+2021-02-07 22:16:44,846 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:16:44,961 - ECG-SEQ-LAB - INFO - Checkpoint 230 saved!
+2021-02-07 22:17:17,963 - ECG-SEQ-LAB - INFO - 
+                Train epoch_231:
+                --------------------
+                train/epoch_loss:        0.46944471448659897
+train/qrs_score:         0.8901
+
+                test/qrs_score:          0.885
+                ---------------------------------
+
+2021-02-07 22:17:17,968 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:17:18,037 - ECG-SEQ-LAB - INFO - Checkpoint 231 saved!
+2021-02-07 22:17:32,247 - ECG-SEQ-LAB - INFO - Train step_1620: loss : 0.06370755285024643
+2021-02-07 22:18:07,456 - ECG-SEQ-LAB - INFO - 
+                Train epoch_232:
+                --------------------
+                train/epoch_loss:        0.4727196991443634
+train/qrs_score:         0.8929
+
+                test/qrs_score:          0.8898
+                ---------------------------------
+
+2021-02-07 22:18:07,578 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:18:07,826 - ECG-SEQ-LAB - INFO - Checkpoint 232 saved!
+2021-02-07 22:19:04,897 - ECG-SEQ-LAB - INFO - 
+                Train epoch_233:
+                --------------------
+                train/epoch_loss:        0.4683091826736927
+train/qrs_score:         0.8964
+
+                test/qrs_score:          0.8872
+                ---------------------------------
+
+2021-02-07 22:19:05,142 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:19:05,207 - ECG-SEQ-LAB - INFO - Checkpoint 233 saved!
+2021-02-07 22:19:38,348 - ECG-SEQ-LAB - INFO - 
+                Train epoch_234:
+                --------------------
+                train/epoch_loss:        0.46025433391332626
+train/qrs_score:         0.8938
+
+                test/qrs_score:          0.8853
+                ---------------------------------
+
+2021-02-07 22:19:38,357 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:19:38,414 - ECG-SEQ-LAB - INFO - Checkpoint 234 saved!
+2021-02-07 22:19:49,663 - ECG-SEQ-LAB - INFO - Train step_1640: loss : 0.06638006120920181
+2021-02-07 22:20:12,068 - ECG-SEQ-LAB - INFO - 
+                Train epoch_235:
+                --------------------
+                train/epoch_loss:        0.4725368469953537
+train/qrs_score:         0.8938
+
+                test/qrs_score:          0.886
+                ---------------------------------
+
+2021-02-07 22:20:12,075 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:20:12,133 - ECG-SEQ-LAB - INFO - Checkpoint 235 saved!
+2021-02-07 22:20:45,047 - ECG-SEQ-LAB - INFO - 
+                Train epoch_236:
+                --------------------
+                train/epoch_loss:        0.4625020921230316
+train/qrs_score:         0.8945
+
+                test/qrs_score:          0.8862
+                ---------------------------------
+
+2021-02-07 22:20:45,055 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:20:45,113 - ECG-SEQ-LAB - INFO - Checkpoint 236 saved!
+2021-02-07 22:21:27,779 - ECG-SEQ-LAB - INFO - 
+                Train epoch_237:
+                --------------------
+                train/epoch_loss:        0.4588501900434494
+train/qrs_score:         0.8969
+
+                test/qrs_score:          0.8882
+                ---------------------------------
+
+2021-02-07 22:21:27,799 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:21:28,556 - ECG-SEQ-LAB - INFO - Checkpoint 237 saved!
+2021-02-07 22:21:56,528 - ECG-SEQ-LAB - INFO - Train step_1660: loss : 0.06886329501867294
+2021-02-07 22:22:43,698 - ECG-SEQ-LAB - INFO - 
+                Train epoch_238:
+                --------------------
+                train/epoch_loss:        0.46196483075618744
+train/qrs_score:         0.8933
+
+                test/qrs_score:          0.8875
+                ---------------------------------
+
+2021-02-07 22:22:43,709 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:22:43,842 - ECG-SEQ-LAB - INFO - Checkpoint 238 saved!
+2021-02-07 22:23:22,231 - ECG-SEQ-LAB - INFO - 
+                Train epoch_239:
+                --------------------
+                train/epoch_loss:        0.4683215692639351
+train/qrs_score:         0.8941
+
+                test/qrs_score:          0.886
+                ---------------------------------
+
+2021-02-07 22:23:22,267 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:23:22,956 - ECG-SEQ-LAB - INFO - Checkpoint 239 saved!
+2021-02-07 22:23:49,842 - ECG-SEQ-LAB - INFO - Train step_1680: loss : 0.07164616882801056
+2021-02-07 22:24:04,254 - ECG-SEQ-LAB - INFO - 
+                Train epoch_240:
+                --------------------
+                train/epoch_loss:        0.4715076833963394
+train/qrs_score:         0.8983
+
+                test/qrs_score:          0.8878
+                ---------------------------------
+
+2021-02-07 22:24:04,267 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:24:04,402 - ECG-SEQ-LAB - INFO - Checkpoint 240 saved!
+2021-02-07 22:24:37,479 - ECG-SEQ-LAB - INFO - 
+                Train epoch_241:
+                --------------------
+                train/epoch_loss:        0.4729996398091316
+train/qrs_score:         0.8991
+
+                test/qrs_score:          0.8888
+                ---------------------------------
+
+2021-02-07 22:24:37,483 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:24:37,655 - ECG-SEQ-LAB - INFO - Checkpoint 241 saved!
+2021-02-07 22:25:18,625 - ECG-SEQ-LAB - INFO - 
+                Train epoch_242:
+                --------------------
+                train/epoch_loss:        0.46197880804538727
+train/qrs_score:         0.9024
+
+                test/qrs_score:          0.8875
+                ---------------------------------
+
+2021-02-07 22:25:18,635 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:25:18,769 - ECG-SEQ-LAB - INFO - Checkpoint 242 saved!
+2021-02-07 22:25:42,301 - ECG-SEQ-LAB - INFO - Train step_1700: loss : 0.06834724545478821
+2021-02-07 22:25:51,780 - ECG-SEQ-LAB - INFO - 
+                Train epoch_243:
+                --------------------
+                train/epoch_loss:        0.45706890895962715
+train/qrs_score:         0.8987
+
+                test/qrs_score:          0.887
+                ---------------------------------
+
+2021-02-07 22:25:51,785 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:25:51,858 - ECG-SEQ-LAB - INFO - Checkpoint 243 saved!
+2021-02-07 22:26:26,398 - ECG-SEQ-LAB - INFO - 
+                Train epoch_244:
+                --------------------
+                train/epoch_loss:        0.4566798321902752
+train/qrs_score:         0.8977
+
+                test/qrs_score:          0.8895
+                ---------------------------------
+
+2021-02-07 22:26:26,408 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:26:26,475 - ECG-SEQ-LAB - INFO - Checkpoint 244 saved!
+2021-02-07 22:26:59,507 - ECG-SEQ-LAB - INFO - 
+                Train epoch_245:
+                --------------------
+                train/epoch_loss:        0.4561385475099087
+train/qrs_score:         0.9005
+
+                test/qrs_score:          0.8878
+                ---------------------------------
+
+2021-02-07 22:26:59,514 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:26:59,583 - ECG-SEQ-LAB - INFO - Checkpoint 245 saved!
+2021-02-07 22:27:19,999 - ECG-SEQ-LAB - INFO - Train step_1720: loss : 0.06890272349119186
+2021-02-07 22:27:37,020 - ECG-SEQ-LAB - INFO - 
+                Train epoch_246:
+                --------------------
+                train/epoch_loss:        0.4535675644874573
+train/qrs_score:         0.9008
+
+                test/qrs_score:          0.8882
+                ---------------------------------
+
+2021-02-07 22:27:37,041 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:27:37,440 - ECG-SEQ-LAB - INFO - Checkpoint 246 saved!
+2021-02-07 22:28:12,048 - ECG-SEQ-LAB - INFO - 
+                Train epoch_247:
+                --------------------
+                train/epoch_loss:        0.4599171169102192
+train/qrs_score:         0.9025
+
+                test/qrs_score:          0.8925
+                ---------------------------------
+
+2021-02-07 22:28:12,054 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:28:12,114 - ECG-SEQ-LAB - INFO - Checkpoint 247 saved!
+2021-02-07 22:28:46,066 - ECG-SEQ-LAB - INFO - 
+                Train epoch_248:
+                --------------------
+                train/epoch_loss:        0.4644738584756851
+train/qrs_score:         0.8982
+
+                test/qrs_score:          0.8872
+                ---------------------------------
+
+2021-02-07 22:28:46,076 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:28:46,134 - ECG-SEQ-LAB - INFO - Checkpoint 248 saved!
+2021-02-07 22:29:03,594 - ECG-SEQ-LAB - INFO - Train step_1740: loss : 0.06795100122690201
+2021-02-07 22:29:19,441 - ECG-SEQ-LAB - INFO - 
+                Train epoch_249:
+                --------------------
+                train/epoch_loss:        0.44786496832966805
+train/qrs_score:         0.8997
+
+                test/qrs_score:          0.8892
+                ---------------------------------
+
+2021-02-07 22:29:19,447 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:29:19,580 - ECG-SEQ-LAB - INFO - Checkpoint 249 saved!
+2021-02-07 22:29:55,852 - ECG-SEQ-LAB - INFO - 
+                Train epoch_250:
+                --------------------
+                train/epoch_loss:        0.4788505658507347
+train/qrs_score:         0.8965
+
+                test/qrs_score:          0.891
+                ---------------------------------
+
+2021-02-07 22:29:55,861 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:29:55,975 - ECG-SEQ-LAB - INFO - Checkpoint 250 saved!
+2021-02-07 22:30:30,132 - ECG-SEQ-LAB - INFO - 
+                Train epoch_251:
+                --------------------
+                train/epoch_loss:        0.45127948373556137
+train/qrs_score:         0.8972
+
+                test/qrs_score:          0.8852
+                ---------------------------------
+
+2021-02-07 22:30:30,138 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:30:30,221 - ECG-SEQ-LAB - INFO - Checkpoint 251 saved!
+2021-02-07 22:30:44,435 - ECG-SEQ-LAB - INFO - Train step_1760: loss : 0.06579789519309998
+2021-02-07 22:31:09,643 - ECG-SEQ-LAB - INFO - 
+                Train epoch_252:
+                --------------------
+                train/epoch_loss:        0.4610893279314041
+train/qrs_score:         0.9029
+
+                test/qrs_score:          0.8845
+                ---------------------------------
+
+2021-02-07 22:31:09,658 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:31:09,788 - ECG-SEQ-LAB - INFO - Checkpoint 252 saved!
+2021-02-07 22:31:44,385 - ECG-SEQ-LAB - INFO - 
+                Train epoch_253:
+                --------------------
+                train/epoch_loss:        0.44851288571953773
+train/qrs_score:         0.9031
+
+                test/qrs_score:          0.8878
+                ---------------------------------
+
+2021-02-07 22:31:44,390 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:31:44,443 - ECG-SEQ-LAB - INFO - Checkpoint 253 saved!
+2021-02-07 22:32:22,880 - ECG-SEQ-LAB - INFO - 
+                Train epoch_254:
+                --------------------
+                train/epoch_loss:        0.45121723785996437
+train/qrs_score:         0.9006
+
+                test/qrs_score:          0.8882
+                ---------------------------------
+
+2021-02-07 22:32:22,916 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:32:23,157 - ECG-SEQ-LAB - INFO - Checkpoint 254 saved!
+2021-02-07 22:32:35,177 - ECG-SEQ-LAB - INFO - Train step_1780: loss : 0.06865770369768143
+2021-02-07 22:32:58,111 - ECG-SEQ-LAB - INFO - 
+                Train epoch_255:
+                --------------------
+                train/epoch_loss:        0.4504094496369362
+train/qrs_score:         0.8989
+
+                test/qrs_score:          0.8945
+                ---------------------------------
+
+2021-02-07 22:32:58,116 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:32:58,260 - ECG-SEQ-LAB - INFO - Checkpoint 255 saved!
+2021-02-07 22:33:32,543 - ECG-SEQ-LAB - INFO - 
+                Train epoch_256:
+                --------------------
+                train/epoch_loss:        0.4590952694416046
+train/qrs_score:         0.9024
+
+                test/qrs_score:          0.887
+                ---------------------------------
+
+2021-02-07 22:33:32,553 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:33:32,684 - ECG-SEQ-LAB - INFO - Checkpoint 256 saved!
+2021-02-07 22:34:09,886 - ECG-SEQ-LAB - INFO - 
+                Train epoch_257:
+                --------------------
+                train/epoch_loss:        0.4551859423518181
+train/qrs_score:         0.9034
+
+                test/qrs_score:          0.8898
+                ---------------------------------
+
+2021-02-07 22:34:09,894 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:34:10,033 - ECG-SEQ-LAB - INFO - Checkpoint 257 saved!
+2021-02-07 22:34:18,021 - ECG-SEQ-LAB - INFO - Train step_1800: loss : 0.0633232370018959
+2021-02-07 22:34:45,617 - ECG-SEQ-LAB - INFO - 
+                Train epoch_258:
+                --------------------
+                train/epoch_loss:        0.46567412093281746
+train/qrs_score:         0.9029
+
+                test/qrs_score:          0.89
+                ---------------------------------
+
+2021-02-07 22:34:45,627 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:34:45,683 - ECG-SEQ-LAB - INFO - Checkpoint 258 saved!
+2021-02-07 22:35:18,799 - ECG-SEQ-LAB - INFO - 
+                Train epoch_259:
+                --------------------
+                train/epoch_loss:        0.4523293487727642
+train/qrs_score:         0.8999
+
+                test/qrs_score:          0.8885
+                ---------------------------------
+
+2021-02-07 22:35:18,803 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:35:18,856 - ECG-SEQ-LAB - INFO - Checkpoint 259 saved!
+2021-02-07 22:35:42,786 - ECG-SEQ-LAB - INFO - Train step_1820: loss : 0.07352197170257568
+2021-02-07 22:35:53,395 - ECG-SEQ-LAB - INFO - 
+                Train epoch_260:
+                --------------------
+                train/epoch_loss:        0.46413133293390274
+train/qrs_score:         0.9019
+
+                test/qrs_score:          0.8945
+                ---------------------------------
+
+2021-02-07 22:35:53,406 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:35:53,531 - ECG-SEQ-LAB - INFO - Checkpoint 260 saved!
+2021-02-07 22:37:16,373 - ECG-SEQ-LAB - INFO - 
+                Train epoch_261:
+                --------------------
+                train/epoch_loss:        0.4547770582139492
+train/qrs_score:         0.9025
+
+                test/qrs_score:          0.8962
+                ---------------------------------
+
+2021-02-07 22:37:16,450 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:37:16,856 - ECG-SEQ-LAB - INFO - Checkpoint 261 saved!
+2021-02-07 22:38:25,999 - ECG-SEQ-LAB - INFO - 
+                Train epoch_262:
+                --------------------
+                train/epoch_loss:        0.45207588374614716
+train/qrs_score:         0.9036
+
+                test/qrs_score:          0.8868
+                ---------------------------------
+
+2021-02-07 22:38:26,013 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:38:26,148 - ECG-SEQ-LAB - INFO - Checkpoint 262 saved!
+2021-02-07 22:38:49,441 - ECG-SEQ-LAB - INFO - Train step_1840: loss : 0.06576599925756454
+2021-02-07 22:38:58,729 - ECG-SEQ-LAB - INFO - 
+                Train epoch_263:
+                --------------------
+                train/epoch_loss:        0.45646989345550537
+train/qrs_score:         0.9073
+
+                test/qrs_score:          0.8845
+                ---------------------------------
+
+2021-02-07 22:38:58,733 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:38:58,809 - ECG-SEQ-LAB - INFO - Checkpoint 263 saved!
+2021-02-07 22:39:32,152 - ECG-SEQ-LAB - INFO - 
+                Train epoch_264:
+                --------------------
+                train/epoch_loss:        0.44977300986647606
+train/qrs_score:         0.9019
+
+                test/qrs_score:          0.8853
+                ---------------------------------
+
+2021-02-07 22:39:32,163 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:39:32,227 - ECG-SEQ-LAB - INFO - Checkpoint 264 saved!
+2021-02-07 22:40:07,551 - ECG-SEQ-LAB - INFO - 
+                Train epoch_265:
+                --------------------
+                train/epoch_loss:        0.44512734189629555
+train/qrs_score:         0.9078
+
+                test/qrs_score:          0.885
+                ---------------------------------
+
+2021-02-07 22:40:07,555 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:40:07,675 - ECG-SEQ-LAB - INFO - Checkpoint 265 saved!
+2021-02-07 22:40:28,166 - ECG-SEQ-LAB - INFO - Train step_1860: loss : 0.06338077038526535
+2021-02-07 22:40:41,499 - ECG-SEQ-LAB - INFO - 
+                Train epoch_266:
+                --------------------
+                train/epoch_loss:        0.4350651763379574
+train/qrs_score:         0.9077
+
+                test/qrs_score:          0.8853
+                ---------------------------------
+
+2021-02-07 22:40:41,510 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:40:41,566 - ECG-SEQ-LAB - INFO - Checkpoint 266 saved!
+2021-02-07 22:41:14,547 - ECG-SEQ-LAB - INFO - 
+                Train epoch_267:
+                --------------------
+                train/epoch_loss:        0.436117310076952
+train/qrs_score:         0.9068
+
+                test/qrs_score:          0.8812
+                ---------------------------------
+
+2021-02-07 22:41:14,551 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:41:14,602 - ECG-SEQ-LAB - INFO - Checkpoint 267 saved!
+2021-02-07 22:41:52,104 - ECG-SEQ-LAB - INFO - 
+                Train epoch_268:
+                --------------------
+                train/epoch_loss:        0.44869786873459816
+train/qrs_score:         0.9015
+
+                test/qrs_score:          0.8848
+                ---------------------------------
+
+2021-02-07 22:41:52,117 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:41:52,368 - ECG-SEQ-LAB - INFO - Checkpoint 268 saved!
+2021-02-07 22:42:10,360 - ECG-SEQ-LAB - INFO - Train step_1880: loss : 0.06030101329088211
+2021-02-07 22:42:28,126 - ECG-SEQ-LAB - INFO - 
+                Train epoch_269:
+                --------------------
+                train/epoch_loss:        0.4475346840918064
+train/qrs_score:         0.9017
+
+                test/qrs_score:          0.8925
+                ---------------------------------
+
+2021-02-07 22:42:28,137 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:42:28,670 - ECG-SEQ-LAB - INFO - Checkpoint 269 saved!
+2021-02-07 22:43:02,429 - ECG-SEQ-LAB - INFO - 
+                Train epoch_270:
+                --------------------
+                train/epoch_loss:        0.4416511580348015
+train/qrs_score:         0.9082
+
+                test/qrs_score:          0.8853
+                ---------------------------------
+
+2021-02-07 22:43:02,441 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:43:02,515 - ECG-SEQ-LAB - INFO - Checkpoint 270 saved!
+2021-02-07 22:43:36,534 - ECG-SEQ-LAB - INFO - 
+                Train epoch_271:
+                --------------------
+                train/epoch_loss:        0.44358111545443535
+train/qrs_score:         0.9076
+
+                test/qrs_score:          0.8888
+                ---------------------------------
+
+2021-02-07 22:43:36,541 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:43:36,597 - ECG-SEQ-LAB - INFO - Checkpoint 271 saved!
+2021-02-07 22:43:50,929 - ECG-SEQ-LAB - INFO - Train step_1900: loss : 0.05734210088849068
+2021-02-07 22:44:09,980 - ECG-SEQ-LAB - INFO - 
+                Train epoch_272:
+                --------------------
+                train/epoch_loss:        0.440405011177063
+train/qrs_score:         0.9076
+
+                test/qrs_score:          0.8903
+                ---------------------------------
+
+2021-02-07 22:44:09,989 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:44:10,065 - ECG-SEQ-LAB - INFO - Checkpoint 272 saved!
+2021-02-07 22:44:44,186 - ECG-SEQ-LAB - INFO - 
+                Train epoch_273:
+                --------------------
+                train/epoch_loss:        0.43377749994397163
+train/qrs_score:         0.9073
+
+                test/qrs_score:          0.8862
+                ---------------------------------
+
+2021-02-07 22:44:44,191 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:44:44,328 - ECG-SEQ-LAB - INFO - Checkpoint 273 saved!
+2021-02-07 22:45:23,074 - ECG-SEQ-LAB - INFO - 
+                Train epoch_274:
+                --------------------
+                train/epoch_loss:        0.434195663779974
+train/qrs_score:         0.9092
+
+                test/qrs_score:          0.8862
+                ---------------------------------
+
+2021-02-07 22:45:23,108 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:45:23,432 - ECG-SEQ-LAB - INFO - Checkpoint 274 saved!
+2021-02-07 22:45:34,632 - ECG-SEQ-LAB - INFO - Train step_1920: loss : 0.060514990240335464
+2021-02-07 22:45:56,849 - ECG-SEQ-LAB - INFO - 
+                Train epoch_275:
+                --------------------
+                train/epoch_loss:        0.435530211776495
+train/qrs_score:         0.9079
+
+                test/qrs_score:          0.8878
+                ---------------------------------
+
+2021-02-07 22:45:56,853 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:45:56,964 - ECG-SEQ-LAB - INFO - Checkpoint 275 saved!
+2021-02-07 22:46:34,724 - ECG-SEQ-LAB - INFO - 
+                Train epoch_276:
+                --------------------
+                train/epoch_loss:        0.4514495059847832
+train/qrs_score:         0.9062
+
+                test/qrs_score:          0.8865
+                ---------------------------------
+
+2021-02-07 22:46:34,749 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:46:35,076 - ECG-SEQ-LAB - INFO - Checkpoint 276 saved!
+2021-02-07 22:47:13,864 - ECG-SEQ-LAB - INFO - 
+                Train epoch_277:
+                --------------------
+                train/epoch_loss:        0.43818962574005127
+train/qrs_score:         0.9117
+
+                test/qrs_score:          0.8918
+                ---------------------------------
+
+2021-02-07 22:47:13,868 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:47:14,011 - ECG-SEQ-LAB - INFO - Checkpoint 277 saved!
+2021-02-07 22:47:22,008 - ECG-SEQ-LAB - INFO - Train step_1940: loss : 0.06380210071802139
+2021-02-07 22:47:53,070 - ECG-SEQ-LAB - INFO - 
+                Train epoch_278:
+                --------------------
+                train/epoch_loss:        0.445263534784317
+train/qrs_score:         0.9131
+
+                test/qrs_score:          0.8943
+                ---------------------------------
+
+2021-02-07 22:47:53,088 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:47:53,345 - ECG-SEQ-LAB - INFO - Checkpoint 278 saved!
+2021-02-07 22:48:30,442 - ECG-SEQ-LAB - INFO - 
+                Train epoch_279:
+                --------------------
+                train/epoch_loss:        0.4398682117462158
+train/qrs_score:         0.9119
+
+                test/qrs_score:          0.892
+                ---------------------------------
+
+2021-02-07 22:48:30,447 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:48:30,577 - ECG-SEQ-LAB - INFO - Checkpoint 279 saved!
+2021-02-07 22:48:54,637 - ECG-SEQ-LAB - INFO - Train step_1960: loss : 0.06046934798359871
+2021-02-07 22:49:05,096 - ECG-SEQ-LAB - INFO - 
+                Train epoch_280:
+                --------------------
+                train/epoch_loss:        0.43270233273506165
+train/qrs_score:         0.914
+
+                test/qrs_score:          0.8925
+                ---------------------------------
+
+2021-02-07 22:49:05,108 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:49:05,368 - ECG-SEQ-LAB - INFO - Checkpoint 280 saved!
+2021-02-07 22:49:38,024 - ECG-SEQ-LAB - INFO - 
+                Train epoch_281:
+                --------------------
+                train/epoch_loss:        0.4368077181279659
+train/qrs_score:         0.9148
+
+                test/qrs_score:          0.8928
+                ---------------------------------
+
+2021-02-07 22:49:38,029 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:49:38,097 - ECG-SEQ-LAB - INFO - Checkpoint 281 saved!
+2021-02-07 22:50:17,806 - ECG-SEQ-LAB - INFO - 
+                Train epoch_282:
+                --------------------
+                train/epoch_loss:        0.44205762445926666
+train/qrs_score:         0.9138
+
+                test/qrs_score:          0.8928
+                ---------------------------------
+
+2021-02-07 22:50:17,817 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:50:17,932 - ECG-SEQ-LAB - INFO - Checkpoint 282 saved!
+2021-02-07 22:50:48,496 - ECG-SEQ-LAB - INFO - Train step_1980: loss : 0.059281863272190094
+2021-02-07 22:51:04,711 - ECG-SEQ-LAB - INFO - 
+                Train epoch_283:
+                --------------------
+                train/epoch_loss:        0.44145072996616364
+train/qrs_score:         0.9148
+
+                test/qrs_score:          0.8903
+                ---------------------------------
+
+2021-02-07 22:51:04,716 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:51:04,895 - ECG-SEQ-LAB - INFO - Checkpoint 283 saved!
+2021-02-07 22:52:06,095 - ECG-SEQ-LAB - INFO - 
+                Train epoch_284:
+                --------------------
+                train/epoch_loss:        0.4336028955876827
+train/qrs_score:         0.914
+
+                test/qrs_score:          0.8945
+                ---------------------------------
+
+2021-02-07 22:52:06,133 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:52:06,563 - ECG-SEQ-LAB - INFO - Checkpoint 284 saved!
+2021-02-07 22:53:07,152 - ECG-SEQ-LAB - INFO - 
+                Train epoch_285:
+                --------------------
+                train/epoch_loss:        0.42981185764074326
+train/qrs_score:         0.9176
+
+                test/qrs_score:          0.892
+                ---------------------------------
+
+2021-02-07 22:53:07,169 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:53:07,330 - ECG-SEQ-LAB - INFO - Checkpoint 285 saved!
+2021-02-07 22:53:33,596 - ECG-SEQ-LAB - INFO - Train step_2000: loss : 0.0595661923289299
+2021-02-07 22:53:52,746 - ECG-SEQ-LAB - INFO - 
+                Train epoch_286:
+                --------------------
+                train/epoch_loss:        0.43781033158302307
+train/qrs_score:         0.9175
+
+                test/qrs_score:          0.8953
+                ---------------------------------
+
+2021-02-07 22:53:52,765 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:53:52,995 - ECG-SEQ-LAB - INFO - Checkpoint 286 saved!
+2021-02-07 22:54:36,348 - ECG-SEQ-LAB - INFO - 
+                Train epoch_287:
+                --------------------
+                train/epoch_loss:        0.4253517687320709
+train/qrs_score:         0.9188
+
+                test/qrs_score:          0.8945
+                ---------------------------------
+
+2021-02-07 22:54:36,357 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:54:36,469 - ECG-SEQ-LAB - INFO - Checkpoint 287 saved!
+2021-02-07 22:55:23,002 - ECG-SEQ-LAB - INFO - 
+                Train epoch_288:
+                --------------------
+                train/epoch_loss:        0.4331377409398556
+train/qrs_score:         0.9159
+
+                test/qrs_score:          0.8888
+                ---------------------------------
+
+2021-02-07 22:55:23,011 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:55:23,232 - ECG-SEQ-LAB - INFO - Checkpoint 288 saved!
+2021-02-07 22:55:49,630 - ECG-SEQ-LAB - INFO - Train step_2020: loss : 0.06477315723896027
+2021-02-07 22:56:15,423 - ECG-SEQ-LAB - INFO - 
+                Train epoch_289:
+                --------------------
+                train/epoch_loss:        0.4325200133025646
+train/qrs_score:         0.9144
+
+                test/qrs_score:          0.8918
+                ---------------------------------
+
+2021-02-07 22:56:15,432 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:56:15,571 - ECG-SEQ-LAB - INFO - Checkpoint 289 saved!
+2021-02-07 22:56:58,819 - ECG-SEQ-LAB - INFO - 
+                Train epoch_290:
+                --------------------
+                train/epoch_loss:        0.4310128279030323
+train/qrs_score:         0.9156
+
+                test/qrs_score:          0.8942
+                ---------------------------------
+
+2021-02-07 22:56:58,824 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:56:58,873 - ECG-SEQ-LAB - INFO - Checkpoint 290 saved!
+2021-02-07 22:57:43,508 - ECG-SEQ-LAB - INFO - 
+                Train epoch_291:
+                --------------------
+                train/epoch_loss:        0.42840611934661865
+train/qrs_score:         0.9199
+
+                test/qrs_score:          0.8965
+                ---------------------------------
+
+2021-02-07 22:57:43,516 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:57:43,565 - ECG-SEQ-LAB - INFO - Checkpoint 291 saved!
+2021-02-07 22:58:02,036 - ECG-SEQ-LAB - INFO - Train step_2040: loss : 0.06516115367412567
+2021-02-07 22:58:26,621 - ECG-SEQ-LAB - INFO - 
+                Train epoch_292:
+                --------------------
+                train/epoch_loss:        0.420913677662611
+train/qrs_score:         0.92
+
+                test/qrs_score:          0.8915
+                ---------------------------------
+
+2021-02-07 22:58:26,627 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:58:26,734 - ECG-SEQ-LAB - INFO - Checkpoint 292 saved!
+2021-02-07 22:59:10,815 - ECG-SEQ-LAB - INFO - 
+                Train epoch_293:
+                --------------------
+                train/epoch_loss:        0.4395839385688305
+train/qrs_score:         0.9205
+
+                test/qrs_score:          0.8925
+                ---------------------------------
+
+2021-02-07 22:59:10,836 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:59:10,940 - ECG-SEQ-LAB - INFO - Checkpoint 293 saved!
+2021-02-07 22:59:58,306 - ECG-SEQ-LAB - INFO - 
+                Train epoch_294:
+                --------------------
+                train/epoch_loss:        0.42174893245100975
+train/qrs_score:         0.9174
+
+                test/qrs_score:          0.8912
+                ---------------------------------
+
+2021-02-07 22:59:58,410 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 22:59:59,133 - ECG-SEQ-LAB - INFO - Checkpoint 294 saved!
+2021-02-07 23:00:25,006 - ECG-SEQ-LAB - INFO - Train step_2060: loss : 0.05734596401453018
+2021-02-07 23:00:55,903 - ECG-SEQ-LAB - INFO - 
+                Train epoch_295:
+                --------------------
+                train/epoch_loss:        0.4232005514204502
+train/qrs_score:         0.9136
+
+                test/qrs_score:          0.8878
+                ---------------------------------
+
+2021-02-07 23:00:55,913 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 23:00:55,971 - ECG-SEQ-LAB - INFO - Checkpoint 295 saved!
+2021-02-07 23:01:39,407 - ECG-SEQ-LAB - INFO - 
+                Train epoch_296:
+                --------------------
+                train/epoch_loss:        0.42996378615498543
+train/qrs_score:         0.9161
+
+                test/qrs_score:          0.8908
+                ---------------------------------
+
+2021-02-07 23:01:39,411 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 23:01:39,493 - ECG-SEQ-LAB - INFO - Checkpoint 296 saved!
+2021-02-07 23:02:22,913 - ECG-SEQ-LAB - INFO - 
+                Train epoch_297:
+                --------------------
+                train/epoch_loss:        0.4374927207827568
+train/qrs_score:         0.9186
+
+                test/qrs_score:          0.8918
+                ---------------------------------
+
+2021-02-07 23:02:22,923 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 23:02:23,063 - ECG-SEQ-LAB - INFO - Checkpoint 297 saved!
+2021-02-07 23:02:33,140 - ECG-SEQ-LAB - INFO - Train step_2080: loss : 0.05526042357087135
+2021-02-07 23:03:12,416 - ECG-SEQ-LAB - INFO - 
+                Train epoch_298:
+                --------------------
+                train/epoch_loss:        0.4311814196407795
+train/qrs_score:         0.9172
+
+                test/qrs_score:          0.8885
+                ---------------------------------
+
+2021-02-07 23:03:12,421 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 23:03:12,687 - ECG-SEQ-LAB - INFO - Checkpoint 298 saved!
+2021-02-07 23:04:00,904 - ECG-SEQ-LAB - INFO - 
+                Train epoch_299:
+                --------------------
+                train/epoch_loss:        0.42670780047774315
+train/qrs_score:         0.9202
+
+                test/qrs_score:          0.8935
+                ---------------------------------
+
+2021-02-07 23:04:00,924 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 23:04:01,117 - ECG-SEQ-LAB - INFO - Checkpoint 299 saved!
+2021-02-07 23:04:32,896 - ECG-SEQ-LAB - INFO - Train step_2100: loss : 0.0622098483145237
+2021-02-07 23:04:47,595 - ECG-SEQ-LAB - INFO - 
+                Train epoch_300:
+                --------------------
+                train/epoch_loss:        0.4211403764784336
+train/qrs_score:         0.9206
+
+                test/qrs_score:          0.8982
+                ---------------------------------
+
+2021-02-07 23:04:47,608 - ECG-SEQ-LAB - INFO - Created checkpoint directory
+2021-02-07 23:04:47,811 - ECG-SEQ-LAB - INFO - Checkpoint 300 saved!

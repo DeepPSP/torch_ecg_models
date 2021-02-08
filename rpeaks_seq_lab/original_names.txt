@@ -1,0 +1,2 @@
+crnn-se:multi_scopic_lstm_epoch253_2021-02-08-05-16-58_epochloss_0.31976_challenge_loss(qrs_score)_0.9042.pth
+cnn-se:multi_scopic_none_epoch261_2021-02-07-22-37-16_epochloss_0.45478_challenge_loss(qrs_score)_0.8962.pth
