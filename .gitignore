@@ -5,3 +5,8 @@ __pycache__
 .vscode
 .idea
 .DS_Store
+
+
+*.ipynb
+!rpeaks_seq_lab/results/train_seq_lab_cpsc2019.ipynb
+!rpeaks_unet/results/train_unet_cpsc2019.ipynb
