@@ -1,0 +1,1153 @@
+2021-06-22 14:03:09,516 - ECG-UNET - INFO - 
+********************   Start Training   ********************
+
+2021-06-22 14:03:09,518 - ECG-UNET - INFO - Using device cuda
+2021-06-22 14:03:09,519 - ECG-UNET - INFO - Using torch of version 1.8.1+cu111
+2021-06-22 14:03:09,521 - ECG-UNET - INFO - with configuration
+{
+    "fs": 500
+    "db_dir": "/home/wenh06/Jupyter/data/CPSC2019/"
+    "log_dir": "/home/wenh06/Jupyter/wenhao/workspace/torch_ecg/train/train_unet_cpsc2019/log"
+    "checkpoints": "/home/wenh06/Jupyter/wenhao/workspace/torch_ecg/train/train_unet_cpsc2019/checkpoints"
+    "model_dir": "/home/wenh06/Jupyter/wenhao/workspace/torch_ecg/train/train_unet_cpsc2019/saved_models"
+    "final_model_name": None
+    "keep_checkpoint_max": 20
+    "train_ratio": 0.8
+    "input_len": 5000
+    "classes": [
+        "N"
+    ]
+    "n_leads": 1
+    "bias_thr": 37
+    "skip_dist": 250
+    "label_smoothing": 0.0
+    "random_normalize": True
+    "random_normalize_mean": [
+        -0.05, 0.1
+    ]
+    "random_normalize_std": [
+        0.08, 0.32
+    ]
+    "baseline_wander": True
+    "bw": True
+    "bw_fs": [0.33 0.1  0.05 0.01]
+    "bw_ampl_ratio": [[0.01 0.01 0.02 0.03]
+ [0.01 0.02 0.04 0.05]
+ [0.1  0.06 0.04 0.02]
+ [0.02 0.04 0.07 0.1 ]
+ [0.05 0.1  0.16 0.25]
+ [0.1  0.15 0.25 0.3 ]
+ [0.25 0.25 0.3  0.35]]
+    "bw_gaussian": [[0.    0.   ]
+ [0.    0.   ]
+ [0.    0.   ]
+ [0.    0.003]
+ [0.    0.01 ]]
+    "flip": [
+        -1, 1, 1, 1, 1
+    ]
+    "n_epochs": 300
+    "batch_size": 256
+    "train_optimizer": "adamw_amsgrad"
+    "momentum": 0.949
+    "betas": [
+        0.9, 0.999
+    ]
+    "decay": 0.01
+    "learning_rate": 0.001
+    "lr": 0.001
+    "lr_scheduler": None
+    "lr_step_size": 50
+    "lr_gamma": 0.1
+    "max_lr": 0.01
+    "burn_in": 400
+    "steps": [
+        5000, 10000
+    ]
+    "early_stopping": {
+        "min_delta": 0.001
+        "patience": 15
+    }
+    "loss": "BCEWithLogitsLoss"
+    "flooding_level": 0.0
+    "log_step": 20
+    "eval_every": 20
+    "model_name": "subtract_unet"
+}
+2021-06-22 14:03:23,492 - ECG-UNET - INFO - training configurations are as follows:
+{
+    "fs": 500
+    "db_dir": "/home/wenh06/Jupyter/data/CPSC2019/"
+    "log_dir": "/home/wenh06/Jupyter/wenhao/workspace/torch_ecg/train/train_unet_cpsc2019/log"
+    "checkpoints": "/home/wenh06/Jupyter/wenhao/workspace/torch_ecg/train/train_unet_cpsc2019/checkpoints"
+    "model_dir": "/home/wenh06/Jupyter/wenhao/workspace/torch_ecg/train/train_unet_cpsc2019/saved_models"
+    "final_model_name": None
+    "keep_checkpoint_max": 20
+    "train_ratio": 0.8
+    "input_len": 5000
+    "classes": [
+        "N"
+    ]
+    "n_leads": 1
+    "bias_thr": 37
+    "skip_dist": 250
+    "label_smoothing": 0.0
+    "random_normalize": True
+    "random_normalize_mean": [
+        -0.05, 0.1
+    ]
+    "random_normalize_std": [
+        0.08, 0.32
+    ]
+    "baseline_wander": True
+    "bw": True
+    "bw_fs": [0.33 0.1  0.05 0.01]
+    "bw_ampl_ratio": [[0.01 0.01 0.02 0.03]
+ [0.01 0.02 0.04 0.05]
+ [0.1  0.06 0.04 0.02]
+ [0.02 0.04 0.07 0.1 ]
+ [0.05 0.1  0.16 0.25]
+ [0.1  0.15 0.25 0.3 ]
+ [0.25 0.25 0.3  0.35]]
+    "bw_gaussian": [[0.    0.   ]
+ [0.    0.   ]
+ [0.    0.   ]
+ [0.    0.003]
+ [0.    0.01 ]]
+    "flip": [
+        -1, 1, 1, 1, 1
+    ]
+    "n_epochs": 300
+    "batch_size": 256
+    "train_optimizer": "adamw_amsgrad"
+    "momentum": 0.949
+    "betas": [
+        0.9, 0.999
+    ]
+    "decay": 0.01
+    "learning_rate": 0.001
+    "lr": 0.001
+    "lr_scheduler": None
+    "lr_step_size": 50
+    "lr_gamma": 0.1
+    "max_lr": 0.01
+    "burn_in": 400
+    "steps": [
+        5000, 10000
+    ]
+    "early_stopping": {
+        "min_delta": 0.001
+        "patience": 15
+    }
+    "loss": "BCEWithLogitsLoss"
+    "flooding_level": 0.0
+    "log_step": 20
+    "eval_every": 20
+    "model_name": "subtract_unet"
+}
+2021-06-22 14:03:23,505 - ECG-UNET - INFO - 
+Starting training:
+------------------
+Epochs:          300
+Batch size:      256
+Learning rate:   0.001
+Training size:   1600
+Validation size: 400
+Device:          cuda
+Optimizer:       adamw_amsgrad
+-----------------------------------------
+
+2021-06-22 14:03:27,954 - ECG-UNET - INFO - 
+Train epoch_1:
+--------------------
+train/epoch_loss:        4.2473196387290955
+train/qrs_score:         0.0486
+
+test/qrs_score:          0.0435
+---------------------------------
+
+2021-06-22 14:03:27,983 - ECG-UNET - INFO - Checkpoint 1 saved!
+2021-06-22 14:03:32,581 - ECG-UNET - INFO - 
+Train epoch_2:
+--------------------
+train/epoch_loss:        3.5186086297035217
+train/qrs_score:         0.2052
+
+test/qrs_score:          0.2112
+---------------------------------
+
+2021-06-22 14:03:32,610 - ECG-UNET - INFO - Checkpoint 2 saved!
+2021-06-22 14:03:34,208 - ECG-UNET - INFO - Train step_20: loss : 0.4585523307323456
+2021-06-22 14:03:37,103 - ECG-UNET - INFO - 
+Train epoch_3:
+--------------------
+train/epoch_loss:        3.271477699279785
+train/qrs_score:         0.3356
+
+test/qrs_score:          0.3408
+---------------------------------
+
+2021-06-22 14:03:37,131 - ECG-UNET - INFO - Checkpoint 3 saved!
+2021-06-22 14:03:41,544 - ECG-UNET - INFO - 
+Train epoch_4:
+--------------------
+train/epoch_loss:        3.1525122225284576
+train/qrs_score:         0.5472
+
+test/qrs_score:          0.5675
+---------------------------------
+
+2021-06-22 14:03:41,571 - ECG-UNET - INFO - Checkpoint 4 saved!
+2021-06-22 14:03:46,054 - ECG-UNET - INFO - 
+Train epoch_5:
+--------------------
+train/epoch_loss:        3.074563205242157
+train/qrs_score:         0.6733
+
+test/qrs_score:          0.6565
+---------------------------------
+
+2021-06-22 14:03:46,083 - ECG-UNET - INFO - Checkpoint 5 saved!
+2021-06-22 14:03:47,638 - ECG-UNET - INFO - Train step_40: loss : 0.4284886121749878
+2021-06-22 14:03:50,582 - ECG-UNET - INFO - 
+Train epoch_6:
+--------------------
+train/epoch_loss:        3.028503656387329
+train/qrs_score:         0.7413
+
+test/qrs_score:          0.7218
+---------------------------------
+
+2021-06-22 14:03:50,610 - ECG-UNET - INFO - Checkpoint 6 saved!
+2021-06-22 14:03:55,140 - ECG-UNET - INFO - 
+Train epoch_7:
+--------------------
+train/epoch_loss:        3.000342071056366
+train/qrs_score:         0.7454
+
+test/qrs_score:          0.728
+---------------------------------
+
+2021-06-22 14:03:55,168 - ECG-UNET - INFO - Checkpoint 7 saved!
+2021-06-22 14:03:59,596 - ECG-UNET - INFO - 
+Train epoch_8:
+--------------------
+train/epoch_loss:        2.9577786326408386
+train/qrs_score:         0.7554
+
+test/qrs_score:          0.7403
+---------------------------------
+
+2021-06-22 14:03:59,646 - ECG-UNET - INFO - Checkpoint 8 saved!
+2021-06-22 14:04:01,166 - ECG-UNET - INFO - Train step_60: loss : 0.41974565386772156
+2021-06-22 14:04:04,194 - ECG-UNET - INFO - 
+Train epoch_9:
+--------------------
+train/epoch_loss:        2.9256321787834167
+train/qrs_score:         0.7802
+
+test/qrs_score:          0.751
+---------------------------------
+
+2021-06-22 14:04:04,222 - ECG-UNET - INFO - Checkpoint 9 saved!
+2021-06-22 14:04:08,694 - ECG-UNET - INFO - 
+Train epoch_10:
+--------------------
+train/epoch_loss:        2.9025016129016876
+train/qrs_score:         0.7734
+
+test/qrs_score:          0.7572
+---------------------------------
+
+2021-06-22 14:04:08,723 - ECG-UNET - INFO - Checkpoint 10 saved!
+2021-06-22 14:04:13,174 - ECG-UNET - INFO - 
+Train epoch_11:
+--------------------
+train/epoch_loss:        2.871154010295868
+train/qrs_score:         0.8007
+
+test/qrs_score:          0.778
+---------------------------------
+
+2021-06-22 14:04:13,202 - ECG-UNET - INFO - Checkpoint 11 saved!
+2021-06-22 14:04:14,542 - ECG-UNET - INFO - Train step_80: loss : 0.40612655878067017
+2021-06-22 14:04:17,695 - ECG-UNET - INFO - 
+Train epoch_12:
+--------------------
+train/epoch_loss:        2.8456728756427765
+train/qrs_score:         0.8078
+
+test/qrs_score:          0.791
+---------------------------------
+
+2021-06-22 14:04:17,723 - ECG-UNET - INFO - Checkpoint 12 saved!
+2021-06-22 14:04:22,150 - ECG-UNET - INFO - 
+Train epoch_13:
+--------------------
+train/epoch_loss:        2.8283533453941345
+train/qrs_score:         0.8186
+
+test/qrs_score:          0.8098
+---------------------------------
+
+2021-06-22 14:04:22,201 - ECG-UNET - INFO - Checkpoint 13 saved!
+2021-06-22 14:04:26,641 - ECG-UNET - INFO - 
+Train epoch_14:
+--------------------
+train/epoch_loss:        2.794160306453705
+train/qrs_score:         0.8176
+
+test/qrs_score:          0.8012
+---------------------------------
+
+2021-06-22 14:04:26,669 - ECG-UNET - INFO - Checkpoint 14 saved!
+2021-06-22 14:04:27,934 - ECG-UNET - INFO - Train step_100: loss : 0.3953761160373688
+2021-06-22 14:04:31,187 - ECG-UNET - INFO - 
+Train epoch_15:
+--------------------
+train/epoch_loss:        2.77373468875885
+train/qrs_score:         0.8291
+
+test/qrs_score:          0.8117
+---------------------------------
+
+2021-06-22 14:04:31,239 - ECG-UNET - INFO - Checkpoint 15 saved!
+2021-06-22 14:04:35,664 - ECG-UNET - INFO - 
+Train epoch_16:
+--------------------
+train/epoch_loss:        2.756067603826523
+train/qrs_score:         0.8246
+
+test/qrs_score:          0.8072
+---------------------------------
+
+2021-06-22 14:04:35,692 - ECG-UNET - INFO - Checkpoint 16 saved!
+2021-06-22 14:04:40,119 - ECG-UNET - INFO - 
+Train epoch_17:
+--------------------
+train/epoch_loss:        2.7270562946796417
+train/qrs_score:         0.8424
+
+test/qrs_score:          0.822
+---------------------------------
+
+2021-06-22 14:04:40,147 - ECG-UNET - INFO - Checkpoint 17 saved!
+2021-06-22 14:04:41,319 - ECG-UNET - INFO - Train step_120: loss : 0.39162561297416687
+2021-06-22 14:04:44,662 - ECG-UNET - INFO - 
+Train epoch_18:
+--------------------
+train/epoch_loss:        2.708188980817795
+train/qrs_score:         0.838
+
+test/qrs_score:          0.8207
+---------------------------------
+
+2021-06-22 14:04:44,691 - ECG-UNET - INFO - Checkpoint 18 saved!
+2021-06-22 14:04:49,210 - ECG-UNET - INFO - 
+Train epoch_19:
+--------------------
+train/epoch_loss:        2.680590331554413
+train/qrs_score:         0.8428
+
+test/qrs_score:          0.832
+---------------------------------
+
+2021-06-22 14:04:49,259 - ECG-UNET - INFO - Checkpoint 19 saved!
+2021-06-22 14:04:50,956 - ECG-UNET - INFO - Train step_140: loss : 0.37125837802886963
+2021-06-22 14:04:53,708 - ECG-UNET - INFO - 
+Train epoch_20:
+--------------------
+train/epoch_loss:        2.6623786091804504
+train/qrs_score:         0.843
+
+test/qrs_score:          0.8295
+---------------------------------
+
+2021-06-22 14:04:53,738 - ECG-UNET - INFO - Checkpoint 20 saved!
+2021-06-22 14:04:58,208 - ECG-UNET - INFO - 
+Train epoch_21:
+--------------------
+train/epoch_loss:        2.635474145412445
+train/qrs_score:         0.8611
+
+test/qrs_score:          0.8418
+---------------------------------
+
+2021-06-22 14:04:58,237 - ECG-UNET - INFO - Checkpoint 21 saved!
+2021-06-22 14:05:02,664 - ECG-UNET - INFO - 
+Train epoch_22:
+--------------------
+train/epoch_loss:        2.621032029390335
+train/qrs_score:         0.8597
+
+test/qrs_score:          0.839
+---------------------------------
+
+2021-06-22 14:05:02,693 - ECG-UNET - INFO - Checkpoint 22 saved!
+2021-06-22 14:05:04,356 - ECG-UNET - INFO - Train step_160: loss : 0.3684619963169098
+2021-06-22 14:05:07,344 - ECG-UNET - INFO - 
+Train epoch_23:
+--------------------
+train/epoch_loss:        2.5975421667099
+train/qrs_score:         0.8666
+
+test/qrs_score:          0.8375
+---------------------------------
+
+2021-06-22 14:05:07,372 - ECG-UNET - INFO - Checkpoint 23 saved!
+2021-06-22 14:05:11,778 - ECG-UNET - INFO - 
+Train epoch_24:
+--------------------
+train/epoch_loss:        2.5754131972789764
+train/qrs_score:         0.8661
+
+test/qrs_score:          0.85
+---------------------------------
+
+2021-06-22 14:05:11,810 - ECG-UNET - INFO - Checkpoint 24 saved!
+2021-06-22 14:05:16,256 - ECG-UNET - INFO - 
+Train epoch_25:
+--------------------
+train/epoch_loss:        2.559488296508789
+train/qrs_score:         0.8785
+
+test/qrs_score:          0.8447
+---------------------------------
+
+2021-06-22 14:05:16,284 - ECG-UNET - INFO - Checkpoint 25 saved!
+2021-06-22 14:05:17,796 - ECG-UNET - INFO - Train step_180: loss : 0.36476650834083557
+2021-06-22 14:05:20,707 - ECG-UNET - INFO - 
+Train epoch_26:
+--------------------
+train/epoch_loss:        2.5328996181488037
+train/qrs_score:         0.8808
+
+test/qrs_score:          0.8597
+---------------------------------
+
+2021-06-22 14:05:20,736 - ECG-UNET - INFO - Checkpoint 26 saved!
+2021-06-22 14:05:25,123 - ECG-UNET - INFO - 
+Train epoch_27:
+--------------------
+train/epoch_loss:        2.5223588049411774
+train/qrs_score:         0.8789
+
+test/qrs_score:          0.8502
+---------------------------------
+
+2021-06-22 14:05:25,151 - ECG-UNET - INFO - Checkpoint 27 saved!
+2021-06-22 14:05:29,595 - ECG-UNET - INFO - 
+Train epoch_28:
+--------------------
+train/epoch_loss:        2.503116875886917
+train/qrs_score:         0.8858
+
+test/qrs_score:          0.845
+---------------------------------
+
+2021-06-22 14:05:29,622 - ECG-UNET - INFO - Checkpoint 28 saved!
+2021-06-22 14:05:31,142 - ECG-UNET - INFO - Train step_200: loss : 0.354438453912735
+2021-06-22 14:05:34,114 - ECG-UNET - INFO - 
+Train epoch_29:
+--------------------
+train/epoch_loss:        2.4742640256881714
+train/qrs_score:         0.8877
+
+test/qrs_score:          0.8565
+---------------------------------
+
+2021-06-22 14:05:34,142 - ECG-UNET - INFO - Checkpoint 29 saved!
+2021-06-22 14:05:38,637 - ECG-UNET - INFO - 
+Train epoch_30:
+--------------------
+train/epoch_loss:        2.4606487452983856
+train/qrs_score:         0.897
+
+test/qrs_score:          0.8588
+---------------------------------
+
+2021-06-22 14:05:38,664 - ECG-UNET - INFO - Checkpoint 30 saved!
+2021-06-22 14:05:43,069 - ECG-UNET - INFO - 
+Train epoch_31:
+--------------------
+train/epoch_loss:        2.44876828789711
+train/qrs_score:         0.8974
+
+test/qrs_score:          0.8615
+---------------------------------
+
+2021-06-22 14:05:43,098 - ECG-UNET - INFO - Checkpoint 31 saved!
+2021-06-22 14:05:44,457 - ECG-UNET - INFO - Train step_220: loss : 0.3456718623638153
+2021-06-22 14:05:47,611 - ECG-UNET - INFO - 
+Train epoch_32:
+--------------------
+train/epoch_loss:        2.42172434926033
+train/qrs_score:         0.8951
+
+test/qrs_score:          0.8582
+---------------------------------
+
+2021-06-22 14:05:47,639 - ECG-UNET - INFO - Checkpoint 32 saved!
+2021-06-22 14:05:52,237 - ECG-UNET - INFO - 
+Train epoch_33:
+--------------------
+train/epoch_loss:        2.406389683485031
+train/qrs_score:         0.9069
+
+test/qrs_score:          0.8635
+---------------------------------
+
+2021-06-22 14:05:52,265 - ECG-UNET - INFO - Checkpoint 33 saved!
+2021-06-22 14:05:56,652 - ECG-UNET - INFO - 
+Train epoch_34:
+--------------------
+train/epoch_loss:        2.3854253590106964
+train/qrs_score:         0.9071
+
+test/qrs_score:          0.862
+---------------------------------
+
+2021-06-22 14:05:56,679 - ECG-UNET - INFO - Checkpoint 34 saved!
+2021-06-22 14:05:57,952 - ECG-UNET - INFO - Train step_240: loss : 0.33793774247169495
+2021-06-22 14:06:01,206 - ECG-UNET - INFO - 
+Train epoch_35:
+--------------------
+train/epoch_loss:        2.368467628955841
+train/qrs_score:         0.9068
+
+test/qrs_score:          0.8535
+---------------------------------
+
+2021-06-22 14:06:01,235 - ECG-UNET - INFO - Checkpoint 35 saved!
+2021-06-22 14:06:05,588 - ECG-UNET - INFO - 
+Train epoch_36:
+--------------------
+train/epoch_loss:        2.350129097700119
+train/qrs_score:         0.9069
+
+test/qrs_score:          0.8545
+---------------------------------
+
+2021-06-22 14:06:05,617 - ECG-UNET - INFO - Checkpoint 36 saved!
+2021-06-22 14:06:10,001 - ECG-UNET - INFO - 
+Train epoch_37:
+--------------------
+train/epoch_loss:        2.337514281272888
+train/qrs_score:         0.9083
+
+test/qrs_score:          0.8575
+---------------------------------
+
+2021-06-22 14:06:10,029 - ECG-UNET - INFO - Checkpoint 37 saved!
+2021-06-22 14:06:11,221 - ECG-UNET - INFO - Train step_260: loss : 0.3285309076309204
+2021-06-22 14:06:14,522 - ECG-UNET - INFO - 
+Train epoch_38:
+--------------------
+train/epoch_loss:        2.31905734539032
+train/qrs_score:         0.9134
+
+test/qrs_score:          0.8642
+---------------------------------
+
+2021-06-22 14:06:14,551 - ECG-UNET - INFO - Checkpoint 38 saved!
+2021-06-22 14:06:19,015 - ECG-UNET - INFO - 
+Train epoch_39:
+--------------------
+train/epoch_loss:        2.321988105773926
+train/qrs_score:         0.9138
+
+test/qrs_score:          0.8575
+---------------------------------
+
+2021-06-22 14:06:19,043 - ECG-UNET - INFO - Checkpoint 39 saved!
+2021-06-22 14:06:20,710 - ECG-UNET - INFO - Train step_280: loss : 0.3333805799484253
+2021-06-22 14:06:23,457 - ECG-UNET - INFO - 
+Train epoch_40:
+--------------------
+train/epoch_loss:        2.2932372391223907
+train/qrs_score:         0.9203
+
+test/qrs_score:          0.8662
+---------------------------------
+
+2021-06-22 14:06:23,486 - ECG-UNET - INFO - Checkpoint 40 saved!
+2021-06-22 14:06:27,837 - ECG-UNET - INFO - 
+Train epoch_41:
+--------------------
+train/epoch_loss:        2.2706636488437653
+train/qrs_score:         0.9186
+
+test/qrs_score:          0.8682
+---------------------------------
+
+2021-06-22 14:06:27,890 - ECG-UNET - INFO - Checkpoint 41 saved!
+2021-06-22 14:06:32,435 - ECG-UNET - INFO - 
+Train epoch_42:
+--------------------
+train/epoch_loss:        2.2521277964115143
+train/qrs_score:         0.9175
+
+test/qrs_score:          0.8647
+---------------------------------
+
+2021-06-22 14:06:32,463 - ECG-UNET - INFO - Checkpoint 42 saved!
+2021-06-22 14:06:34,022 - ECG-UNET - INFO - Train step_300: loss : 0.31735774874687195
+2021-06-22 14:06:36,870 - ECG-UNET - INFO - 
+Train epoch_43:
+--------------------
+train/epoch_loss:        2.2384065985679626
+train/qrs_score:         0.9253
+
+test/qrs_score:          0.8798
+---------------------------------
+
+2021-06-22 14:06:36,900 - ECG-UNET - INFO - Checkpoint 43 saved!
+2021-06-22 14:06:41,305 - ECG-UNET - INFO - 
+Train epoch_44:
+--------------------
+train/epoch_loss:        2.2237522304058075
+train/qrs_score:         0.8972
+
+test/qrs_score:          0.8492
+---------------------------------
+
+2021-06-22 14:06:41,333 - ECG-UNET - INFO - Checkpoint 44 saved!
+2021-06-22 14:06:45,762 - ECG-UNET - INFO - 
+Train epoch_45:
+--------------------
+train/epoch_loss:        2.2101831138134003
+train/qrs_score:         0.9209
+
+test/qrs_score:          0.8542
+---------------------------------
+
+2021-06-22 14:06:45,792 - ECG-UNET - INFO - Checkpoint 45 saved!
+2021-06-22 14:06:47,291 - ECG-UNET - INFO - Train step_320: loss : 0.3136306703090668
+2021-06-22 14:06:50,172 - ECG-UNET - INFO - 
+Train epoch_46:
+--------------------
+train/epoch_loss:        2.187462031841278
+train/qrs_score:         0.9222
+
+test/qrs_score:          0.8722
+---------------------------------
+
+2021-06-22 14:06:50,200 - ECG-UNET - INFO - Checkpoint 46 saved!
+2021-06-22 14:06:54,607 - ECG-UNET - INFO - 
+Train epoch_47:
+--------------------
+train/epoch_loss:        2.1688483357429504
+train/qrs_score:         0.9256
+
+test/qrs_score:          0.8772
+---------------------------------
+
+2021-06-22 14:06:54,635 - ECG-UNET - INFO - Checkpoint 47 saved!
+2021-06-22 14:06:59,148 - ECG-UNET - INFO - 
+Train epoch_48:
+--------------------
+train/epoch_loss:        2.153410494327545
+train/qrs_score:         0.9318
+
+test/qrs_score:          0.8738
+---------------------------------
+
+2021-06-22 14:06:59,180 - ECG-UNET - INFO - Checkpoint 48 saved!
+2021-06-22 14:07:00,767 - ECG-UNET - INFO - Train step_340: loss : 0.3104051649570465
+2021-06-22 14:07:03,787 - ECG-UNET - INFO - 
+Train epoch_49:
+--------------------
+train/epoch_loss:        2.1449523270130157
+train/qrs_score:         0.9345
+
+test/qrs_score:          0.8795
+---------------------------------
+
+2021-06-22 14:07:03,815 - ECG-UNET - INFO - Checkpoint 49 saved!
+2021-06-22 14:07:08,340 - ECG-UNET - INFO - 
+Train epoch_50:
+--------------------
+train/epoch_loss:        2.121850550174713
+train/qrs_score:         0.9406
+
+test/qrs_score:          0.8848
+---------------------------------
+
+2021-06-22 14:07:08,368 - ECG-UNET - INFO - Checkpoint 50 saved!
+2021-06-22 14:07:12,713 - ECG-UNET - INFO - 
+Train epoch_51:
+--------------------
+train/epoch_loss:        2.1081733405590057
+train/qrs_score:         0.9393
+
+test/qrs_score:          0.8748
+---------------------------------
+
+2021-06-22 14:07:12,740 - ECG-UNET - INFO - Checkpoint 51 saved!
+2021-06-22 14:07:14,082 - ECG-UNET - INFO - Train step_360: loss : 0.2979225814342499
+2021-06-22 14:07:17,236 - ECG-UNET - INFO - 
+Train epoch_52:
+--------------------
+train/epoch_loss:        2.094086468219757
+train/qrs_score:         0.9368
+
+test/qrs_score:          0.8842
+---------------------------------
+
+2021-06-22 14:07:17,264 - ECG-UNET - INFO - Checkpoint 52 saved!
+2021-06-22 14:07:21,792 - ECG-UNET - INFO - 
+Train epoch_53:
+--------------------
+train/epoch_loss:        2.0793498754501343
+train/qrs_score:         0.9357
+
+test/qrs_score:          0.8732
+---------------------------------
+
+2021-06-22 14:07:21,829 - ECG-UNET - INFO - Checkpoint 53 saved!
+2021-06-22 14:07:26,278 - ECG-UNET - INFO - 
+Train epoch_54:
+--------------------
+train/epoch_loss:        2.071100026369095
+train/qrs_score:         0.9356
+
+test/qrs_score:          0.8843
+---------------------------------
+
+2021-06-22 14:07:26,306 - ECG-UNET - INFO - Checkpoint 54 saved!
+2021-06-22 14:07:27,575 - ECG-UNET - INFO - Train step_380: loss : 0.2975940406322479
+2021-06-22 14:07:30,740 - ECG-UNET - INFO - 
+Train epoch_55:
+--------------------
+train/epoch_loss:        2.0615507066249847
+train/qrs_score:         0.9404
+
+test/qrs_score:          0.8852
+---------------------------------
+
+2021-06-22 14:07:30,768 - ECG-UNET - INFO - Checkpoint 55 saved!
+2021-06-22 14:07:35,185 - ECG-UNET - INFO - 
+Train epoch_56:
+--------------------
+train/epoch_loss:        2.042494684457779
+train/qrs_score:         0.9433
+
+test/qrs_score:          0.8825
+---------------------------------
+
+2021-06-22 14:07:35,213 - ECG-UNET - INFO - Checkpoint 56 saved!
+2021-06-22 14:07:39,714 - ECG-UNET - INFO - 
+Train epoch_57:
+--------------------
+train/epoch_loss:        2.0291192531585693
+train/qrs_score:         0.9418
+
+test/qrs_score:          0.8808
+---------------------------------
+
+2021-06-22 14:07:39,765 - ECG-UNET - INFO - Checkpoint 57 saved!
+2021-06-22 14:07:40,938 - ECG-UNET - INFO - Train step_400: loss : 0.28845784068107605
+2021-06-22 14:07:44,135 - ECG-UNET - INFO - 
+Train epoch_58:
+--------------------
+train/epoch_loss:        2.0152934193611145
+train/qrs_score:         0.9369
+
+test/qrs_score:          0.8832
+---------------------------------
+
+2021-06-22 14:07:44,163 - ECG-UNET - INFO - Checkpoint 58 saved!
+2021-06-22 14:07:48,575 - ECG-UNET - INFO - 
+Train epoch_59:
+--------------------
+train/epoch_loss:        2.0031090080738068
+train/qrs_score:         0.9422
+
+test/qrs_score:          0.8875
+---------------------------------
+
+2021-06-22 14:07:48,627 - ECG-UNET - INFO - Checkpoint 59 saved!
+2021-06-22 14:07:50,399 - ECG-UNET - INFO - Train step_420: loss : 0.2800159454345703
+2021-06-22 14:07:53,198 - ECG-UNET - INFO - 
+Train epoch_60:
+--------------------
+train/epoch_loss:        1.9827170670032501
+train/qrs_score:         0.9488
+
+test/qrs_score:          0.8915
+---------------------------------
+
+2021-06-22 14:07:53,227 - ECG-UNET - INFO - Checkpoint 60 saved!
+2021-06-22 14:07:57,600 - ECG-UNET - INFO - 
+Train epoch_61:
+--------------------
+train/epoch_loss:        1.9741626977920532
+train/qrs_score:         0.9446
+
+test/qrs_score:          0.889
+---------------------------------
+
+2021-06-22 14:07:57,628 - ECG-UNET - INFO - Checkpoint 61 saved!
+2021-06-22 14:08:02,148 - ECG-UNET - INFO - 
+Train epoch_62:
+--------------------
+train/epoch_loss:        1.9505820274353027
+train/qrs_score:         0.9472
+
+test/qrs_score:          0.892
+---------------------------------
+
+2021-06-22 14:08:02,177 - ECG-UNET - INFO - Checkpoint 62 saved!
+2021-06-22 14:08:03,810 - ECG-UNET - INFO - Train step_440: loss : 0.27837657928466797
+2021-06-22 14:08:06,520 - ECG-UNET - INFO - 
+Train epoch_63:
+--------------------
+train/epoch_loss:        1.9360074698925018
+train/qrs_score:         0.9462
+
+test/qrs_score:          0.8835
+---------------------------------
+
+2021-06-22 14:08:06,547 - ECG-UNET - INFO - Checkpoint 63 saved!
+2021-06-22 14:08:10,966 - ECG-UNET - INFO - 
+Train epoch_64:
+--------------------
+train/epoch_loss:        1.9258320927619934
+train/qrs_score:         0.9482
+
+test/qrs_score:          0.8995
+---------------------------------
+
+2021-06-22 14:08:10,996 - ECG-UNET - INFO - Checkpoint 64 saved!
+2021-06-22 14:08:15,427 - ECG-UNET - INFO - 
+Train epoch_65:
+--------------------
+train/epoch_loss:        1.9166410863399506
+train/qrs_score:         0.9499
+
+test/qrs_score:          0.895
+---------------------------------
+
+2021-06-22 14:08:15,457 - ECG-UNET - INFO - Checkpoint 65 saved!
+2021-06-22 14:08:17,001 - ECG-UNET - INFO - Train step_460: loss : 0.27008721232414246
+2021-06-22 14:08:19,847 - ECG-UNET - INFO - 
+Train epoch_66:
+--------------------
+train/epoch_loss:        1.9084276258945465
+train/qrs_score:         0.9548
+
+test/qrs_score:          0.8965
+---------------------------------
+
+2021-06-22 14:08:19,875 - ECG-UNET - INFO - Checkpoint 66 saved!
+2021-06-22 14:08:24,340 - ECG-UNET - INFO - 
+Train epoch_67:
+--------------------
+train/epoch_loss:        1.8882413804531097
+train/qrs_score:         0.9574
+
+test/qrs_score:          0.886
+---------------------------------
+
+2021-06-22 14:08:24,369 - ECG-UNET - INFO - Checkpoint 67 saved!
+2021-06-22 14:08:28,761 - ECG-UNET - INFO - 
+Train epoch_68:
+--------------------
+train/epoch_loss:        1.8799039423465729
+train/qrs_score:         0.947
+
+test/qrs_score:          0.889
+---------------------------------
+
+2021-06-22 14:08:28,810 - ECG-UNET - INFO - Checkpoint 68 saved!
+2021-06-22 14:08:30,208 - ECG-UNET - INFO - Train step_480: loss : 0.26745957136154175
+2021-06-22 14:08:33,295 - ECG-UNET - INFO - 
+Train epoch_69:
+--------------------
+train/epoch_loss:        1.8778398633003235
+train/qrs_score:         0.9518
+
+test/qrs_score:          0.8885
+---------------------------------
+
+2021-06-22 14:08:33,325 - ECG-UNET - INFO - Checkpoint 69 saved!
+2021-06-22 14:08:37,869 - ECG-UNET - INFO - 
+Train epoch_70:
+--------------------
+train/epoch_loss:        1.8530579507350922
+train/qrs_score:         0.9542
+
+test/qrs_score:          0.892
+---------------------------------
+
+2021-06-22 14:08:37,897 - ECG-UNET - INFO - Checkpoint 70 saved!
+2021-06-22 14:08:42,394 - ECG-UNET - INFO - 
+Train epoch_71:
+--------------------
+train/epoch_loss:        1.8370205760002136
+train/qrs_score:         0.9542
+
+test/qrs_score:          0.8918
+---------------------------------
+
+2021-06-22 14:08:42,424 - ECG-UNET - INFO - Checkpoint 71 saved!
+2021-06-22 14:08:43,758 - ECG-UNET - INFO - Train step_500: loss : 0.263976514339447
+2021-06-22 14:08:46,897 - ECG-UNET - INFO - 
+Train epoch_72:
+--------------------
+train/epoch_loss:        1.8356460630893707
+train/qrs_score:         0.9549
+
+test/qrs_score:          0.8932
+---------------------------------
+
+2021-06-22 14:08:46,925 - ECG-UNET - INFO - Checkpoint 72 saved!
+2021-06-22 14:08:51,363 - ECG-UNET - INFO - 
+Train epoch_73:
+--------------------
+train/epoch_loss:        1.8218233287334442
+train/qrs_score:         0.9606
+
+test/qrs_score:          0.8938
+---------------------------------
+
+2021-06-22 14:08:51,391 - ECG-UNET - INFO - Checkpoint 73 saved!
+2021-06-22 14:08:55,917 - ECG-UNET - INFO - 
+Train epoch_74:
+--------------------
+train/epoch_loss:        1.8081354796886444
+train/qrs_score:         0.9541
+
+test/qrs_score:          0.8932
+---------------------------------
+
+2021-06-22 14:08:55,945 - ECG-UNET - INFO - Checkpoint 74 saved!
+2021-06-22 14:08:57,218 - ECG-UNET - INFO - Train step_520: loss : 0.2550415098667145
+2021-06-22 14:09:00,464 - ECG-UNET - INFO - 
+Train epoch_75:
+--------------------
+train/epoch_loss:        1.7967263460159302
+train/qrs_score:         0.9599
+
+test/qrs_score:          0.8878
+---------------------------------
+
+2021-06-22 14:09:00,517 - ECG-UNET - INFO - Checkpoint 75 saved!
+2021-06-22 14:09:05,021 - ECG-UNET - INFO - 
+Train epoch_76:
+--------------------
+train/epoch_loss:        1.7875140309333801
+train/qrs_score:         0.9622
+
+test/qrs_score:          0.888
+---------------------------------
+
+2021-06-22 14:09:05,049 - ECG-UNET - INFO - Checkpoint 76 saved!
+2021-06-22 14:09:09,514 - ECG-UNET - INFO - 
+Train epoch_77:
+--------------------
+train/epoch_loss:        1.7788275480270386
+train/qrs_score:         0.9553
+
+test/qrs_score:          0.8875
+---------------------------------
+
+2021-06-22 14:09:09,543 - ECG-UNET - INFO - Checkpoint 77 saved!
+2021-06-22 14:09:10,713 - ECG-UNET - INFO - Train step_540: loss : 0.2533554136753082
+2021-06-22 14:09:14,027 - ECG-UNET - INFO - 
+Train epoch_78:
+--------------------
+train/epoch_loss:        1.7662239968776703
+train/qrs_score:         0.956
+
+test/qrs_score:          0.8965
+---------------------------------
+
+2021-06-22 14:09:14,055 - ECG-UNET - INFO - Checkpoint 78 saved!
+2021-06-22 14:09:18,498 - ECG-UNET - INFO - 
+Train epoch_79:
+--------------------
+train/epoch_loss:        1.7498149424791336
+train/qrs_score:         0.9616
+
+test/qrs_score:          0.9028
+---------------------------------
+
+2021-06-22 14:09:18,527 - ECG-UNET - INFO - Checkpoint 79 saved!
+2021-06-22 14:09:20,187 - ECG-UNET - INFO - Train step_560: loss : 0.24446959793567657
+2021-06-22 14:09:22,911 - ECG-UNET - INFO - 
+Train epoch_80:
+--------------------
+train/epoch_loss:        1.740807518362999
+train/qrs_score:         0.9535
+
+test/qrs_score:          0.878
+---------------------------------
+
+2021-06-22 14:09:22,940 - ECG-UNET - INFO - Checkpoint 80 saved!
+2021-06-22 14:09:27,373 - ECG-UNET - INFO - 
+Train epoch_81:
+--------------------
+train/epoch_loss:        1.7404468804597855
+train/qrs_score:         0.9592
+
+test/qrs_score:          0.8945
+---------------------------------
+
+2021-06-22 14:09:27,401 - ECG-UNET - INFO - Checkpoint 81 saved!
+2021-06-22 14:09:31,946 - ECG-UNET - INFO - 
+Train epoch_82:
+--------------------
+train/epoch_loss:        1.7236245572566986
+train/qrs_score:         0.9632
+
+test/qrs_score:          0.8948
+---------------------------------
+
+2021-06-22 14:09:31,975 - ECG-UNET - INFO - Checkpoint 82 saved!
+2021-06-22 14:09:33,633 - ECG-UNET - INFO - Train step_580: loss : 0.24152150750160217
+2021-06-22 14:09:36,406 - ECG-UNET - INFO - 
+Train epoch_83:
+--------------------
+train/epoch_loss:        1.7148641496896744
+train/qrs_score:         0.9624
+
+test/qrs_score:          0.8893
+---------------------------------
+
+2021-06-22 14:09:36,434 - ECG-UNET - INFO - Checkpoint 83 saved!
+2021-06-22 14:09:40,926 - ECG-UNET - INFO - 
+Train epoch_84:
+--------------------
+train/epoch_loss:        1.6955988258123398
+train/qrs_score:         0.9674
+
+test/qrs_score:          0.8928
+---------------------------------
+
+2021-06-22 14:09:40,956 - ECG-UNET - INFO - Checkpoint 84 saved!
+2021-06-22 14:09:45,373 - ECG-UNET - INFO - 
+Train epoch_85:
+--------------------
+train/epoch_loss:        1.6866262555122375
+train/qrs_score:         0.964
+
+test/qrs_score:          0.8932
+---------------------------------
+
+2021-06-22 14:09:45,404 - ECG-UNET - INFO - Checkpoint 85 saved!
+2021-06-22 14:09:46,967 - ECG-UNET - INFO - Train step_600: loss : 0.23503710329532623
+2021-06-22 14:09:49,889 - ECG-UNET - INFO - 
+Train epoch_86:
+--------------------
+train/epoch_loss:        1.6734659671783447
+train/qrs_score:         0.9586
+
+test/qrs_score:          0.892
+---------------------------------
+
+2021-06-22 14:09:49,917 - ECG-UNET - INFO - Checkpoint 86 saved!
+2021-06-22 14:09:54,407 - ECG-UNET - INFO - 
+Train epoch_87:
+--------------------
+train/epoch_loss:        1.6609855145215988
+train/qrs_score:         0.9692
+
+test/qrs_score:          0.8925
+---------------------------------
+
+2021-06-22 14:09:54,435 - ECG-UNET - INFO - Checkpoint 87 saved!
+2021-06-22 14:09:58,852 - ECG-UNET - INFO - 
+Train epoch_88:
+--------------------
+train/epoch_loss:        1.653183251619339
+train/qrs_score:         0.9602
+
+test/qrs_score:          0.898
+---------------------------------
+
+2021-06-22 14:09:58,880 - ECG-UNET - INFO - Checkpoint 88 saved!
+2021-06-22 14:10:00,325 - ECG-UNET - INFO - Train step_620: loss : 0.2339135855436325
+2021-06-22 14:10:03,408 - ECG-UNET - INFO - 
+Train epoch_89:
+--------------------
+train/epoch_loss:        1.6415935903787613
+train/qrs_score:         0.9669
+
+test/qrs_score:          0.8918
+---------------------------------
+
+2021-06-22 14:10:03,437 - ECG-UNET - INFO - Checkpoint 89 saved!
+2021-06-22 14:10:07,845 - ECG-UNET - INFO - 
+Train epoch_90:
+--------------------
+train/epoch_loss:        1.6320817023515701
+train/qrs_score:         0.9711
+
+test/qrs_score:          0.8985
+---------------------------------
+
+2021-06-22 14:10:07,873 - ECG-UNET - INFO - Checkpoint 90 saved!
+2021-06-22 14:10:12,445 - ECG-UNET - INFO - 
+Train epoch_91:
+--------------------
+train/epoch_loss:        1.6243951320648193
+train/qrs_score:         0.9646
+
+test/qrs_score:          0.8965
+---------------------------------
+
+2021-06-22 14:10:12,472 - ECG-UNET - INFO - Checkpoint 91 saved!
+2021-06-22 14:10:13,809 - ECG-UNET - INFO - Train step_640: loss : 0.23388619720935822
+2021-06-22 14:10:16,966 - ECG-UNET - INFO - 
+Train epoch_92:
+--------------------
+train/epoch_loss:        1.6202852874994278
+train/qrs_score:         0.9695
+
+test/qrs_score:          0.8943
+---------------------------------
+
+2021-06-22 14:10:16,994 - ECG-UNET - INFO - Checkpoint 92 saved!
+2021-06-22 14:10:21,561 - ECG-UNET - INFO - 
+Train epoch_93:
+--------------------
+train/epoch_loss:        1.6130922734737396
+train/qrs_score:         0.9703
+
+test/qrs_score:          0.8945
+---------------------------------
+
+2021-06-22 14:10:21,588 - ECG-UNET - INFO - Checkpoint 93 saved!
+2021-06-22 14:10:26,060 - ECG-UNET - INFO - 
+Train epoch_94:
+--------------------
+train/epoch_loss:        1.5965294241905212
+train/qrs_score:         0.9634
+
+test/qrs_score:          0.8928
+---------------------------------
+
+2021-06-22 14:10:26,089 - ECG-UNET - INFO - Checkpoint 94 saved!
+2021-06-22 14:10:27,367 - ECG-UNET - INFO - Train step_660: loss : 0.22466284036636353
+2021-06-22 14:10:30,471 - ECG-UNET - INFO - 
+Train epoch_95:
+--------------------
+train/epoch_loss:        1.5823836624622345
+train/qrs_score:         0.9631
+
+test/qrs_score:          0.887
+---------------------------------
+
+2021-06-22 14:10:30,502 - ECG-UNET - INFO - Checkpoint 95 saved!
+2021-06-22 14:10:34,916 - ECG-UNET - INFO - 
+Train epoch_96:
+--------------------
+train/epoch_loss:        1.5784481018781662
+train/qrs_score:         0.9701
+
+test/qrs_score:          0.8998
+---------------------------------
+
+2021-06-22 14:10:34,920 - ECG-UNET - INFO - early stopping is triggered at epoch 96
+2021-06-22 14:10:34,937 - ECG-UNET - INFO - Best model saved to /home/wenh06/Jupyter/wenhao/workspace/torch_ecg/train/train_unet_cpsc2019/saved_models/ECG_SUBTRACT_UNET_CPSC2019_epoch_2021-06-22-14-10-34_BestModel_challenge_score(qrs_score)_0.9028.pth.tar!

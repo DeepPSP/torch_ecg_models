@@ -1,0 +1,2 @@
+subtract-unet:ECG_SUBTRACT_UNET_CPSC2019_epoch_2021-06-22-14-10-34_BestModel_challenge_score(qrs_score)_0.9028.pth.tar
+vanilla-unet:ECG_UNET_CPSC2019_epoch_2021-06-22-14-02-00_BestModel_challenge_score(qrs_score)_0.8688.pth.tar
