@@ -1,0 +1,1 @@
+crnn-12leads:ECG_CRNN_CINC2021_multi_scopic_leadwise_none_tranche_all_epoch_06-23_23-49_BestModel_fb_0.54_gb_0.36_cm_0.63.pth.tar
